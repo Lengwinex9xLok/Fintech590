@@ -87,8 +87,8 @@ Fintech590-Lecture5/
 
 | Responsibility | Owner |
 | --- | --- |
-| FFIEC data collection, RSSD verification, metric calculations, and exposure-note draft | [Name] |
-| Power BI model, DAX conditional formatting, dashboard design, and PBIX delivery | [Name] |
+| FFIEC data collection, RSSD verification, metric calculations, and exposure-note draft | Ziye Luo |
+| Power BI model, DAX conditional formatting, dashboard design, and PBIX delivery | Abhinav Sharaff |
 | Final formula, ranking, visual, and submission review | Both team members |
 
 ## Submission Checklist
