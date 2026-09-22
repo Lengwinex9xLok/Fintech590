@@ -1,0 +1,5 @@
+# unzipped copy of the FFIEC file (the ZIP is the source of record)
+data/*.txt
+# never commit FFIEC credentials
+cdr_credentials*.txt
+.DS_Store
