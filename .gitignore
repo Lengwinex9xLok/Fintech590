@@ -3,3 +3,4 @@ data/*.txt
 # never commit FFIEC credentials
 cdr_credentials*.txt
 .DS_Store
+~$*

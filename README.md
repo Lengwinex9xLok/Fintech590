@@ -104,6 +104,43 @@ Fintech590/
 3. Right click the JPMorgan Chase bar > Drill through > Bank Detail to see the supporting metrics and data checks.
 4. Optional: to refresh on your machine, update the file path in the `Metrics` query (`DataFolder`) and create your own `cdr_credentials.txt` as described above.
 
+## Defense 1: Institutional Risk Console (Lecture 6)
+
+`Fintech590_Defense1_RiskConsole.pbix` extends the Lecture 5 scorecard with the standardized CCAR stress scenarios applied to our five banks over a 9 quarter horizon (Q0 = 2026-06-30 actual, Q1 to Q9 projected). The Lecture 5 file is left unchanged.
+
+**New page: Stress Console**
+- Scenario slicer: Baseline, Adverse, Severely Adverse.
+- Action title (DAX measure `Stress Action Title`) naming the bank with the thinnest Q9 capital and the bank with the thinnest Q9 liquidity cushion under the selected scenario.
+- Tier 1 capital ratio path, Q0 to Q9, for all five banks.
+- 12 month liquidity gap path, Q0 to Q9, with deposit runoff replaced by wholesale funding that reprices within 12 months.
+- Securities mark to market loss at the scenario haircut, as a share of Tier 1 capital (HTM BHCK1754 + AFS BHCK1773).
+
+**Scenario implementation** (`Scenario_Path` query, 30 rows)
+
+| | Baseline | Adverse | Severely Adverse |
+|---|---|---|---|
+| Tier 1 drift | +0.3 pt by Q9, straight line | -0.2 pt per quarter Q1 to Q5, flat after (-1.0 pt at Q9) | -0.6, -0.5, -0.4, -0.3 pt in Q1 to Q4, then +0.1 pt per quarter (-1.3 pt at Q9) |
+| Deposit runoff | 0% | 5% cumulative by Q4 | 15% cumulative by Q2 |
+| Securities haircut | 0% | 3% | 10% |
+
+The assignment's per quarter Tier 1 rules do not reconcile with the cumulative totals it quotes (about -1.6 and -3.1 pt). We follow the per quarter rules so every step traces to a stated rule. The securities haircut is reported as a loss, not deducted from Tier 1, because the scenario prescribes the Tier 1 path separately.
+
+**Q9 results (Tier 1 ratio / 12 month liquidity gap)**
+
+| Bank | Baseline | Adverse | Severely Adverse |
+|---|---|---|---|
+| Bank of America | 12.9% / 37.1% | 11.6% / 34.2% | 11.3% / 28.4% |
+| Citigroup | 15.0% / 39.5% | 13.7% / 36.9% | 13.4% / 31.7% |
+| Goldman Sachs | 14.8% / 37.3% | 13.5% / 36.0% | 13.2% / 33.4% |
+| JPMorgan Chase | 15.4% / 29.7% | 14.1% / 27.0% | 13.8% / 21.6% |
+| Wells Fargo | 11.7% / 36.3% | 10.4% / 33.0% | 10.1% / 26.4% |
+
+**Files in `Defense 1/`**
+- `LLM_Validation_Log.md`: how every AI assisted formula and number was independently verified. Memo rows to be added.
+- `stress_paths_Q0_Q9.csv`: independent Python recomputation of all 150 bank, scenario and quarter values from the raw FFIEC file, used to verify the console.
+
+Still to come: the Institutional Risk Memo.
+
 ## Team Responsibilities
 
 | Responsibility | Owner |
