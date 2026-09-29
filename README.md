@@ -1,6 +1,6 @@
 # FFIEC Balance Sheet Scorecard
 
-FINTECH 590, Lecture 5 Team Assignment
+FINTECH 590, Lecture 5 Team Assignment and Defense 1
 
 ## Conclusion
 
@@ -88,12 +88,19 @@ SWITCH ( TRUE (),
 
 ```text
 Fintech590/
-|-- Fintech590_Lecture5_Scorecard.pbix   Power BI scorecard (Scorecard + Bank Detail pages)
-|-- Exposure_note.txt                    3 sentence exposure note
-|-- data/BHCF20260630.ZIP                Official FFIEC NIC FR Y-9C bulk file, Q2 2026
-|-- ffiec_metrics_2026Q2.xlsx            Original metrics workbook (reference only; no longer used by the PBIX)
-|-- Book1.xlsx                           Same workbook, original upload (reference only)
-|-- .gitignore                           Blocks credentials and the unzipped data file
+|-- Fintech590_Lecture5_Scorecard.pbix      Lecture 5 scorecard
+|-- Fintech590_Defense1_RiskConsole.pbix    Defense 1 console
+|-- Exposure_note.txt                       Lecture 5 exposure note
+|-- data/BHCF20260630.ZIP                   FFIEC FR Y-9C source file
+|-- Defense 1/
+|   |-- Institutional_Risk_Memo.pdf         Two-page committee memo
+|   |-- Institutional_Risk_Memo.md          Editable memo source
+|   |-- LLM_Validation_Log.md               Completed AI validation log
+|   |-- FINTECH590_Independent_Stress_Check.xlsx  Formula-based audit
+|   `-- stress_paths_Q0_Q9.csv              150-row stress path
+|-- ffiec_metrics_2026Q2.xlsx               Reference workbook
+|-- Book1.xlsx                              Original reference workbook
+|-- .gitignore                              Blocks credentials and unzipped data
 `-- README.md
 ```
 
@@ -136,10 +143,13 @@ The assignment's per quarter Tier 1 rules do not reconcile with the cumulative t
 | Wells Fargo | 11.7% / 36.3% | 10.4% / 33.0% | 10.1% / 26.4% |
 
 **Files in `Defense 1/`**
-- `LLM_Validation_Log.md`: how every AI assisted formula and number was independently verified. Memo rows to be added.
+- `Institutional_Risk_Memo.pdf`: two-page committee recommendation, evidence, both required stress impacts, and conditions for changing the recommendation.
+- `Institutional_Risk_Memo.md`: editable source of the memo.
+- `LLM_Validation_Log.md`: console formula checks plus completed memo-number and language entries. The final section distinguishes the AI-assisted computational audit from a student's own spot check.
+- `FINTECH590_Independent_Stress_Check.xlsx`: source fields, scenario assumptions, 150 formula-driven paths, and 150/150 Tier 1/gap comparison checks.
 - `stress_paths_Q0_Q9.csv`: independent Python recomputation of all 150 bank, scenario and quarter values from the raw FFIEC file, used to verify the console.
 
-Still to come: the Institutional Risk Memo.
+The three Defense 1 deliverables (PBIX, memo, validation log) are present. Before the in-class defense, the team still needs its own spot check, an 8-minute presentation rehearsal, and a live dashboard amendment rehearsal.
 
 ## Team Responsibilities
 
