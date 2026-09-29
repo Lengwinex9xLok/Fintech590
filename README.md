@@ -92,11 +92,17 @@ Fintech590/
 |-- Fintech590_Defense1_RiskConsole.pbix    Defense 1 console
 |-- Exposure_note.txt                       Lecture 5 exposure note
 |-- data/BHCF20260630.ZIP                   FFIEC FR Y-9C source file
+|-- data/tier1_history_Y9C.csv             Reported Tier 1 history, 8 quarters (fan chart)
 |-- Defense 1/
 |   |-- Institutional_Risk_Memo.pdf         Two-page committee memo
 |   |-- Institutional_Risk_Memo.md          Editable memo source
 |   |-- LLM_Validation_Log.md               AI validation log
 |   |-- LLM_Validation_Log.pdf              PDF copy of the log
+|   |-- Slide Deck Version/                 Complete submission set for the slide deck version
+|   |   |-- Fintech590_Defense1_RiskConsole_SlideDeck.pbix
+|   |   |-- Fintech590_Defense1_RiskConsole_SlideDeck.pdf
+|   |   |-- Institutional_Risk_Memo.pdf / .md   Copy of the memo (same for both versions)
+|   |   `-- LLM_Validation_Log.pdf / .md        Full log, rows 1 to 32
 |   |-- FINTECH590_Independent_Stress_Check.xlsx  Formula-based audit
 |   `-- stress_paths_Q0_Q9.csv              150-row stress path
 |-- ffiec_metrics_2026Q2.xlsx               Reference workbook
@@ -143,12 +149,21 @@ The assignment's per quarter Tier 1 rules do not reconcile with the cumulative t
 | JPMorgan Chase | 15.4% / 29.7% | 14.1% / 27.0% | 13.8% / 21.6% |
 | Wells Fargo | 11.7% / 36.3% | 10.4% / 33.0% | 10.1% / 26.4% |
 
+**Slide deck version:** `Defense 1/Slide Deck Version/` holds a complete submission set that follows the Lecture 5 slide deck criteria: `Fintech590_Defense1_RiskConsole_SlideDeck.pbix`, its PDF export, a copy of the memo (unchanged, it applies to both versions) and the full validation log (rows 1 to 32). Submit either the files in `Defense 1/` plus the main PBIX, or this folder, depending on which version is requested. Pages in the slide deck PBIX:
+- **Executive:** one static CCAR fan chart, no slicers. Reported Tier 1 history (8 quarters, FR Y-9C) plus Baseline and Severely Adverse on one date axis, a labeled 8% line, a breach series drawn red only below 8%, and a data driven action title: "No bank breaches 8% under Severely Adverse: Wells Fargo comes closest, bottoming at 9.6% in 2027 Q2 (projected quarter 4 of 9)".
+- **Analyst:** the scenario slicer driven stress paths, with a data driven action title on every panel.
+- **Regulator:** traceability to FFIEC schedule, MDRM field and RSSD ID; the same fan chart with a neutral title; liquidity gap inputs with MDRM codes in the column headers.
+- The Scorecard page is hidden, not deleted.
+
+New queries: `Tier1_History` (reads `data/tier1_history_Y9C.csv`) and `FanDates`. Data paths in this file point at `Y:\Fintech590\` (the repo root); update them if the repo lives elsewhere on your machine. Its added formulas are logged as rows 26 to 32 in the folder's `LLM_Validation_Log.md`.
+
 **Files in `Defense 1/`**
 - `Institutional_Risk_Memo.pdf`: two-page committee recommendation, evidence, both required stress impacts, and conditions for changing the recommendation.
 - `Institutional_Risk_Memo.md`: editable source of the memo.
 - `LLM_Validation_Log.md`: console formula checks plus memo-number and language entries, with methods and corrections recorded for each AI-assisted item.
 - `LLM_Validation_Log.pdf`: black-and-white PDF copy of the same log for file submission.
 - `FINTECH590_Independent_Stress_Check.xlsx`: source fields, scenario assumptions, 150 formula-driven paths, and 150/150 Tier 1/gap comparison checks.
+- `Slide Deck Version/`: complete submission set for the slide deck version (PBIX, PDF export, memo copy, full log rows 1 to 32).
 - `stress_paths_Q0_Q9.csv`: independent Python recomputation of all 150 bank, scenario and quarter values from the raw FFIEC file, used to verify the console.
 
 The three Defense 1 deliverables (PBIX, memo, validation log) are present. The log records the verification methods for the AI-assisted formulas, figures, and memo text. The team still needs an 8-minute presentation rehearsal and a live dashboard amendment rehearsal before the in-class defense.
