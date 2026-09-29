@@ -149,7 +149,7 @@ The assignment's per quarter Tier 1 rules do not reconcile with the cumulative t
 - `FINTECH590_Independent_Stress_Check.xlsx`: source fields, scenario assumptions, 150 formula-driven paths, and 150/150 Tier 1/gap comparison checks.
 - `stress_paths_Q0_Q9.csv`: independent Python recomputation of all 150 bank, scenario and quarter values from the raw FFIEC file, used to verify the console.
 
-The three Defense 1 deliverables (PBIX, memo, validation log) are present. Before the in-class defense, the team still needs its own spot check, an 8-minute presentation rehearsal, and a live dashboard amendment rehearsal.
+The three Defense 1 deliverables (PBIX, memo, validation log) are present. On 2026-09-29, Ziye reported a four-formula manual spot check matching the workbook; details are in the validation log. The team still needs an 8-minute presentation rehearsal and a live dashboard amendment rehearsal before the in-class defense.
 
 ## Team Responsibilities
 
