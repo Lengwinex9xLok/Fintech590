@@ -95,7 +95,8 @@ Fintech590/
 |-- Defense 1/
 |   |-- Institutional_Risk_Memo.pdf         Two-page committee memo
 |   |-- Institutional_Risk_Memo.md          Editable memo source
-|   |-- LLM_Validation_Log.md               Completed AI validation log
+|   |-- LLM_Validation_Log.md               AI validation log
+|   |-- LLM_Validation_Log.pdf              PDF copy of the log
 |   |-- FINTECH590_Independent_Stress_Check.xlsx  Formula-based audit
 |   `-- stress_paths_Q0_Q9.csv              150-row stress path
 |-- ffiec_metrics_2026Q2.xlsx               Reference workbook
@@ -145,11 +146,12 @@ The assignment's per quarter Tier 1 rules do not reconcile with the cumulative t
 **Files in `Defense 1/`**
 - `Institutional_Risk_Memo.pdf`: two-page committee recommendation, evidence, both required stress impacts, and conditions for changing the recommendation.
 - `Institutional_Risk_Memo.md`: editable source of the memo.
-- `LLM_Validation_Log.md`: console formula checks plus completed memo-number and language entries. The final section distinguishes the AI-assisted computational audit from a student's own spot check.
+- `LLM_Validation_Log.md`: console formula checks plus memo-number and language entries, with methods and corrections recorded for each AI-assisted item.
+- `LLM_Validation_Log.pdf`: black-and-white PDF copy of the same log for file submission.
 - `FINTECH590_Independent_Stress_Check.xlsx`: source fields, scenario assumptions, 150 formula-driven paths, and 150/150 Tier 1/gap comparison checks.
 - `stress_paths_Q0_Q9.csv`: independent Python recomputation of all 150 bank, scenario and quarter values from the raw FFIEC file, used to verify the console.
 
-The three Defense 1 deliverables (PBIX, memo, validation log) are present. On 2026-09-29, Ziye reported a four-formula manual spot check matching the workbook; details are in the validation log. The team still needs an 8-minute presentation rehearsal and a live dashboard amendment rehearsal before the in-class defense.
+The three Defense 1 deliverables (PBIX, memo, validation log) are present. The log records the verification methods for the AI-assisted formulas, figures, and memo text. The team still needs an 8-minute presentation rehearsal and a live dashboard amendment rehearsal before the in-class defense.
 
 ## Team Responsibilities
 
