@@ -1,0 +1,51 @@
+metric_key,schedule,mdrm,description,transform,kept,friendly_name,shap_rank,lineage
+total_assets,derived,,total_assets,flag / growth,0,total_assets,,derived |  | flag / growth
+tier1_leverage,RC-R,RCFA/RCOA 7204,Tier 1 leverage ratio as reported,level,1,Tier 1 leverage ratio (%),3.0,RC-R | RCFA/RCOA 7204 | level
+noncurrent_ratio,"RC-N, RC-C",(1407 + 1403) / 2122,90+ PD and nonaccrual / total loans,level,1,Noncurrent loans / total loans,1.0,"RC-N, RC-C | (1407 + 1403) / 2122 | level"
+reserve_coverage,"RC, RC-N",3123 / (1407 + 1403),ACL on loans / noncurrent loans,level,0,ACL on loans / noncurrent loans,,"RC, RC-N | 3123 / (1407 + 1403) | level"
+cre_to_capital,"RC-C, RC-R",(F158+F159+1460+F161) / 3792,Non-owner-occ CRE / total RBC (Tier 1 for CBLR),level,1,CRE / total risk based capital,7.0,"RC-C, RC-R | (F158+F159+1460+F161) / 3792 | level"
+uninsured_share,"RC-O, RC",RCON5597 / (RCON2200 + RCFN2200),Estimated uninsured / total deposits,level,0,Estimated uninsured / total deposits,,"RC-O, RC | RCON5597 / (RCON2200 + RCFN2200) | level"
+brokered_share,"RC-E, RC",RCON2365 / deposits,Brokered / total deposits,level,1,Brokered deposits / total deposits,9.0,"RC-E, RC | RCON2365 / deposits | level"
+unreal_loss_t1,"RC-B, RC-R",((1754-1771)+(1772-1773)) / 8274,Unrealized HTM+AFS losses / Tier 1,level,1,Unrealized securities losses / Tier 1,8.0,"RC-B, RC-R | ((1754-1771)+(1772-1773)) / 8274 | level"
+nco_rate,"RI-B, RC-C",(RIAD4635 - RIAD4605) x 4/q / 2122,Annualized net charge-offs / loans,level,0,Annualized net charge-offs / loans,,"RI-B, RC-C | (RIAD4635 - RIAD4605) x 4/q / 2122 | level"
+nim,"RI, RC",RIAD4074 x 4/q / 2170,Annualized NII / total assets,level,1,Net interest margin (annualized),11.0,"RI, RC | RIAD4074 x 4/q / 2170 | level"
+roa,"RI, RC",RIAD4340 x 4/q / 2170,Annualized net income / total assets,level,0,Annualized net income / total assets,,"RI, RC | RIAD4340 x 4/q / 2170 | level"
+loans_to_deposits,"RC-C, RC",2122 / deposits,Loans / deposits,level,1,Loans / deposits,12.0,"RC-C, RC | 2122 / deposits | level"
+log_assets,RC,log10(2170),Size,level,1,Bank size (log10 assets),2.0,RC | log10(2170) | level
+form_051,derived,,form_051,flag / growth,0,form_051,,derived |  | flag / growth
+form_031,derived,,form_031,flag / growth,0,form_031,,derived |  | flag / growth
+cblr_elector,derived,,cblr_elector,flag / growth,0,cblr_elector,,derived |  | flag / growth
+miss_uninsured,derived,,miss_uninsured,flag / growth,0,miss_uninsured,,derived |  | flag / growth
+miss_brokered,derived,,miss_brokered,flag / growth,0,miss_brokered,,derived |  | flag / growth
+tier1_leverage_chg4q,RC-R,RCFA/RCOA 7204,Tier 1 leverage ratio as reported,4 quarter change,1,"Tier 1 leverage, 4 quarter change",10.0,RC-R | RCFA/RCOA 7204 | 4 quarter change
+noncurrent_ratio_chg4q,"RC-N, RC-C",(1407 + 1403) / 2122,90+ PD and nonaccrual / total loans,4 quarter change,0,90+ PD and nonaccrual / total loans,,"RC-N, RC-C | (1407 + 1403) / 2122 | 4 quarter change"
+cre_to_capital_chg4q,"RC-C, RC-R",(F158+F159+1460+F161) / 3792,Non-owner-occ CRE / total RBC (Tier 1 for CBLR),4 quarter change,0,Non-owner-occ CRE / total RBC (Tier 1 for CBLR),,"RC-C, RC-R | (F158+F159+1460+F161) / 3792 | 4 quarter change"
+unreal_loss_t1_chg4q,"RC-B, RC-R",((1754-1771)+(1772-1773)) / 8274,Unrealized HTM+AFS losses / Tier 1,4 quarter change,1,"Unrealized losses / Tier 1, 4Q change",6.0,"RC-B, RC-R | ((1754-1771)+(1772-1773)) / 8274 | 4 quarter change"
+roa_chg4q,"RI, RC",RIAD4340 x 4/q / 2170,Annualized net income / total assets,4 quarter change,1,"ROA, 4 quarter change",4.0,"RI, RC | RIAD4340 x 4/q / 2170 | 4 quarter change"
+uninsured_share_chg4q,"RC-O, RC",RCON5597 / (RCON2200 + RCFN2200),Estimated uninsured / total deposits,4 quarter change,0,Estimated uninsured / total deposits,,"RC-O, RC | RCON5597 / (RCON2200 + RCFN2200) | 4 quarter change"
+assets_growth_yoy,derived,,assets_growth_yoy,flag / growth,0,assets_growth_yoy,,derived |  | flag / growth
+loans_growth_yoy,derived,,loans_growth_yoy,flag / growth,0,loans_growth_yoy,,derived |  | flag / growth
+deposits_growth_yoy,derived,,deposits_growth_yoy,flag / growth,0,deposits_growth_yoy,,derived |  | flag / growth
+rapid_growth,derived,,rapid_growth,flag / growth,0,rapid_growth,,derived |  | flag / growth
+tier1_leverage_pct,RC-R,RCFA/RCOA 7204,Tier 1 leverage ratio as reported,pct rank in tier x quarter,0,Tier 1 leverage ratio as reported,,RC-R | RCFA/RCOA 7204 | pct rank in tier x quarter
+tier1_leverage_z,RC-R,RCFA/RCOA 7204,Tier 1 leverage ratio as reported,winsorized z in tier x quarter,0,Tier 1 leverage ratio as reported,,RC-R | RCFA/RCOA 7204 | winsorized z in tier x quarter
+noncurrent_ratio_pct,"RC-N, RC-C",(1407 + 1403) / 2122,90+ PD and nonaccrual / total loans,pct rank in tier x quarter,0,90+ PD and nonaccrual / total loans,,"RC-N, RC-C | (1407 + 1403) / 2122 | pct rank in tier x quarter"
+noncurrent_ratio_z,"RC-N, RC-C",(1407 + 1403) / 2122,90+ PD and nonaccrual / total loans,winsorized z in tier x quarter,0,90+ PD and nonaccrual / total loans,,"RC-N, RC-C | (1407 + 1403) / 2122 | winsorized z in tier x quarter"
+reserve_coverage_pct,"RC, RC-N",3123 / (1407 + 1403),ACL on loans / noncurrent loans,pct rank in tier x quarter,0,ACL on loans / noncurrent loans,,"RC, RC-N | 3123 / (1407 + 1403) | pct rank in tier x quarter"
+reserve_coverage_z,"RC, RC-N",3123 / (1407 + 1403),ACL on loans / noncurrent loans,winsorized z in tier x quarter,0,ACL on loans / noncurrent loans,,"RC, RC-N | 3123 / (1407 + 1403) | winsorized z in tier x quarter"
+cre_to_capital_pct,"RC-C, RC-R",(F158+F159+1460+F161) / 3792,Non-owner-occ CRE / total RBC (Tier 1 for CBLR),pct rank in tier x quarter,0,Non-owner-occ CRE / total RBC (Tier 1 for CBLR),,"RC-C, RC-R | (F158+F159+1460+F161) / 3792 | pct rank in tier x quarter"
+cre_to_capital_z,"RC-C, RC-R",(F158+F159+1460+F161) / 3792,Non-owner-occ CRE / total RBC (Tier 1 for CBLR),winsorized z in tier x quarter,0,Non-owner-occ CRE / total RBC (Tier 1 for CBLR),,"RC-C, RC-R | (F158+F159+1460+F161) / 3792 | winsorized z in tier x quarter"
+uninsured_share_pct,"RC-O, RC",RCON5597 / (RCON2200 + RCFN2200),Estimated uninsured / total deposits,pct rank in tier x quarter,0,Estimated uninsured / total deposits,,"RC-O, RC | RCON5597 / (RCON2200 + RCFN2200) | pct rank in tier x quarter"
+uninsured_share_z,"RC-O, RC",RCON5597 / (RCON2200 + RCFN2200),Estimated uninsured / total deposits,winsorized z in tier x quarter,0,Estimated uninsured / total deposits,,"RC-O, RC | RCON5597 / (RCON2200 + RCFN2200) | winsorized z in tier x quarter"
+brokered_share_pct,"RC-E, RC",RCON2365 / deposits,Brokered / total deposits,pct rank in tier x quarter,0,Brokered / total deposits,,"RC-E, RC | RCON2365 / deposits | pct rank in tier x quarter"
+brokered_share_z,"RC-E, RC",RCON2365 / deposits,Brokered / total deposits,winsorized z in tier x quarter,0,Brokered / total deposits,,"RC-E, RC | RCON2365 / deposits | winsorized z in tier x quarter"
+unreal_loss_t1_pct,"RC-B, RC-R",((1754-1771)+(1772-1773)) / 8274,Unrealized HTM+AFS losses / Tier 1,pct rank in tier x quarter,0,Unrealized HTM+AFS losses / Tier 1,,"RC-B, RC-R | ((1754-1771)+(1772-1773)) / 8274 | pct rank in tier x quarter"
+unreal_loss_t1_z,"RC-B, RC-R",((1754-1771)+(1772-1773)) / 8274,Unrealized HTM+AFS losses / Tier 1,winsorized z in tier x quarter,0,Unrealized HTM+AFS losses / Tier 1,,"RC-B, RC-R | ((1754-1771)+(1772-1773)) / 8274 | winsorized z in tier x quarter"
+nco_rate_pct,"RI-B, RC-C",(RIAD4635 - RIAD4605) x 4/q / 2122,Annualized net charge-offs / loans,pct rank in tier x quarter,0,Annualized net charge-offs / loans,,"RI-B, RC-C | (RIAD4635 - RIAD4605) x 4/q / 2122 | pct rank in tier x quarter"
+nco_rate_z,"RI-B, RC-C",(RIAD4635 - RIAD4605) x 4/q / 2122,Annualized net charge-offs / loans,winsorized z in tier x quarter,0,Annualized net charge-offs / loans,,"RI-B, RC-C | (RIAD4635 - RIAD4605) x 4/q / 2122 | winsorized z in tier x quarter"
+nim_pct,"RI, RC",RIAD4074 x 4/q / 2170,Annualized NII / total assets,pct rank in tier x quarter,0,Annualized NII / total assets,,"RI, RC | RIAD4074 x 4/q / 2170 | pct rank in tier x quarter"
+nim_z,"RI, RC",RIAD4074 x 4/q / 2170,Annualized NII / total assets,winsorized z in tier x quarter,0,Annualized NII / total assets,,"RI, RC | RIAD4074 x 4/q / 2170 | winsorized z in tier x quarter"
+roa_pct,"RI, RC",RIAD4340 x 4/q / 2170,Annualized net income / total assets,pct rank in tier x quarter,1,"ROA, percentile within size tier",5.0,"RI, RC | RIAD4340 x 4/q / 2170 | pct rank in tier x quarter"
+roa_z,"RI, RC",RIAD4340 x 4/q / 2170,Annualized net income / total assets,winsorized z in tier x quarter,0,Annualized net income / total assets,,"RI, RC | RIAD4340 x 4/q / 2170 | winsorized z in tier x quarter"
+loans_to_deposits_pct,"RC-C, RC",2122 / deposits,Loans / deposits,pct rank in tier x quarter,0,Loans / deposits,,"RC-C, RC | 2122 / deposits | pct rank in tier x quarter"
+loans_to_deposits_z,"RC-C, RC",2122 / deposits,Loans / deposits,winsorized z in tier x quarter,0,Loans / deposits,,"RC-C, RC | 2122 / deposits | winsorized z in tier x quarter"

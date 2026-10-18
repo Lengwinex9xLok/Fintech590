@@ -168,6 +168,30 @@ New queries: `Tier1_History` (reads `data/tier1_history_Y9C.csv`) and `FanDates`
 
 The three Defense 1 deliverables (PBIX, memo, validation log) are present. The log records the verification methods for the AI-assisted formulas, figures, and memo text. The team still needs an 8-minute presentation rehearsal and a live dashboard amendment rehearsal before the in-class defense.
 
+## Phase 3: Early Warning Model for Every Call Report Filer (Lectures 7 to 9)
+
+Phase 3 scales the five bank console to the full universe of about 4,300 banks: every FFIEC Call Report filer, every quarter since 2015, an XGBoost early warning model, SHAP explanations, and a triage dashboard. Status, owners and the numbers for the report and memo are in `Phase 3/Team_Handoff.md`.
+
+**Pipeline** (Python, run from the repo root; `pip install -r scripts/requirements.txt`)
+
+| Step | Script | Output |
+| --- | --- | --- |
+| Download | `scripts/00_download_cdr.py` | `data/cdr_bulk/`: one CDR "Call Reports, Single Period" bulk file per quarter (not committed, 341 MB) |
+| Ingest (Gate 1) | `scripts/01_ingest.py` | Bank x quarter panel; `data/phase3/reconciliation.csv` (row counts by 031 / 041 / 051 vs the CDR Panel of Reporters, every quarter) |
+| Features | `scripts/02_features.py` | 50 candidate features, the 4 quarter stress target, long fact table and MDRM lineage |
+| Model (Gate 2) | `scripts/03_model.py` | Out of time XGBoost (train 2017 to 2021, gap 2022, test 2023 to 2024), global SHAP chart, `feature_log.csv` |
+| Power BI export | `scripts/04_export_pbi.py` | `data/phase3/pbi/`: the star schema the PBIX imports, plus the flag threshold |
+
+**Results so far** (placeholder stress threshold, model `ews-xgb-0.1`)
+- 239,553 bank quarters, 6,581 banks, 46 quarters; every quarter reconciles to the CDR filer count (2026 Q2: 80 + 934 + 3,283 = 4,297).
+- Out of time PR AUC 0.209 on the 12 kept features against a 6.3% base rate; at the review capacity threshold (0.904, about 50 banks a quarter) precision is 42%.
+- 2026 Q2: 61 banks flagged, 367 more already in breach.
+- Known limitation: the model did not flag Silicon Valley Bank, Signature Bank or First Republic before their 2023 failures (see the failure mode inventory in `Phase 3/Team_Handoff.md`).
+
+**Files in `Phase 3/`**
+- `Team_Handoff.md`: owners, open decisions, key numbers, failure mode inventory and override policy draft for the governance memo.
+- `LLM_Validation_Log.md`: AI assisted steps P1 to P11, how each was verified, and corrections made.
+
 ## Team Responsibilities
 
 | Responsibility | Owner |

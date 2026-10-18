@@ -4,3 +4,10 @@ data/*.txt
 cdr_credentials*.txt
 .DS_Store
 ~$*
+# python
+__pycache__/
+# derived parquet outputs (rebuild with scripts/)
+data/phase3/*.parquet
+# raw CDR bulk files (341 MB; rebuild with scripts/00_download_cdr.py)
+data/cdr_bulk/
+data/_to_delete/
