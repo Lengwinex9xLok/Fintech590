@@ -42,7 +42,7 @@ STRESS = {
 }
 ```
 
-About 6% of bank quarters breach. Noncurrent loans drive most of it (3 to 7% of banks a year), ROA 2 to 3%, leverage under 2%. If you change it, rerun and every number in this file changes:
+About 6.6% of labeled bank quarters breach. Noncurrent loans drive most of it (3 to 7% of banks a year), ROA 2 to 3%, leverage under 2%. If you change it, rerun and every number in this file changes:
 
 ```
 python scripts/01_ingest.py      # only needed once, about 20 seconds
@@ -131,11 +131,11 @@ Structure: recommendation first, then failure modes, then override policy, then 
 
 **Failure mode inventory** (need at least 3; each has evidence):
 
-1. **It does not catch liquidity runs.** Backtest at 2022 Q4: SVB ranked 2,472nd, Signature (NY) about 3,900th, First Republic 3,301st out of about 4,700. None flagged. SVB had 86% uninsured deposits and unrealized losses above 100% of Tier 1. The target measures credit and earnings, so the model learned credit and earnings.
+1. **It does not catch liquidity runs.** Backtest at 2022 Q4: SVB ranked 2,208th, Signature (NY) 3,783rd, First Republic 2,832nd out of about 4,700. None flagged. SVB had 86% uninsured deposits and unrealized losses above 100% of Tier 1. The target measures credit and earnings, so the model learned credit and earnings.
 2. **Failed banks drop out of the labels.** A bank that fails stops filing, so it has no next 4 quarters and gets no label. The event we care about most is invisible to training (survivorship, slide 32).
-3. **Bank size is the second most important feature.** It may be picking up form type and reporting thresholds (051 filers; uninsured deposits only reported at $1B+) rather than risk (slide 43). 53 of the 61 flagged banks are under $1B.
+3. **Bank size is the second most important feature.** It may be picking up form type and reporting thresholds (051 filers; uninsured deposits only reported at $1B+) rather than risk (slide 43). 51 of the 61 flagged banks are under $1B.
 4. **Scores are a ranking, not probabilities.** Training reweighted the rare class (`scale_pos_weight`), so a score of 0.90 does not mean a 90% chance.
-5. **Drift.** The 0.904 cutoff flagged about 50 banks a quarter in 2023 to 2024 but 61 in 2026 Q2, and banks already in breach rose from about 6% to 8.5%. The threshold needs a recheck when each Call Report lands.
+5. **Drift.** The 0.910 cutoff flagged about 50 banks a quarter in 2023 to 2024 but 61 in 2026 Q2, and banks already in breach rose from about 6% to 8.5%. The threshold needs a recheck when each Call Report lands.
 6. **The threshold is a judgment call.** Our stress definition is not a supervisory standard (slide 39). Change it and the model changes.
 7. **Structural missingness.** Uninsured deposits are blank by rule under $1B; CBLR electors do not report risk based capital, so CRE to capital uses Tier 1 as a proxy; past due and nonaccrual totals do not exist in the bulk files before 2017, so training starts in 2017.
 
@@ -148,21 +148,27 @@ Structure: recommendation first, then failure modes, then override policy, then 
 
 ## Step 5: PDF report (Backwards First)
 
-Page 1 is the full story on its own: the recommendation, 61 banks flagged in 2026 Q2, 42% precision vs a 6.3% base rate, and the liquidity blind spot. The pages after it are evidence: data and reconciliation, target definition, out of time results, SHAP summary, watchlist, failure modes. Screenshots come from the PBIX.
+Page 1 is the full story on its own: the recommendation, 61 banks flagged in 2026 Q2, 41% precision vs a 6.4% base rate, and the liquidity blind spot. The pages after it are evidence: data and reconciliation, target definition, out of time results, SHAP summary, watchlist, failure modes. Screenshots come from the PBIX.
 
-## Numbers (placeholder threshold, model ews-xgb-0.1)
+## Numbers (placeholder threshold, model ews-xgb-0.2)
 
 **Data**
 * 46 quarters of FFIEC CDR Call Report bulk files, 2015 Q1 to 2026 Q2. 239,553 bank quarters, 6,581 banks.
 * Every quarter reconciles to the CDR Panel of Reporters by form type. 2026 Q2: 80 (031) + 934 (041) + 3,283 (051) = 4,297.
 
+**Target label fix (ews-xgb-0.2, found by Loki)**
+* Version 0.1 labeled a bank quarter as "no breach" even when some of the next 4 quarters were never filed (the bank failed, merged, or the quarter was near the end of the data). That counted incomplete follow up as a negative.
+* Now: 1 if a breach is observed in any filed forward quarter; 0 only if all 4 forward quarters are filed with no breach; otherwise unlabeled. Forward quarters are matched by calendar date, so a filing gap is never mistaken for the next quarter.
+* 16,450 bank quarters moved from 0 to unlabeled (including SVB, Signature and First Republic at 2022 Q4). No positive labels changed. Labeled bank quarters: 200,238.
+
 **Model** (train 2017 to 2021, gap 2022, test 2023 to 2024)
-* Test base rate 6.3%. PR AUC 0.209 with the final 12 features (0.220 with all 49).
-* Flag threshold 0.904, sized so the committee reviews about 50 banks a quarter. Test precision 42% (6.7x the base rate), recall 8%.
+* Train 94,339 bank quarters (base 6.6%), test 33,911 (base 6.4%).
+* Test base rate 6.4%. PR AUC 0.208 with the final 12 features (0.227 with all 49). Note: after the label fix (see below) the naive top 12 cut scores 0.221, better than our correlation aware cut. Worth a decision: keep the deduped set for interpretability, or switch to the naive set.
+* Flag threshold 0.910, sized so the committee reviews about 50 banks a quarter. Test precision 41% (6.4x the base rate), recall 8%.
 * 12 features kept by mean |SHAP|: noncurrent loans, bank size, Tier 1 leverage, ROA 4Q change, ROA percentile in size tier, unrealized losses 4Q change, CRE to capital, unrealized losses to Tier 1, brokered deposit share, leverage 4Q change, net interest margin, loans to deposits.
 
 **2026 Q2**
-* 61 banks flagged (not yet in breach), 39 new this quarter, holding 0.4% of system deposits.
+* 61 banks flagged (not yet in breach), 42 new this quarter, holding 10.4% of system deposits. Almost all of that is one bank: Bank of America NA (rank 54, score 0.914), flagged mainly because its Tier 1 leverage (7.11%) sits just above the placeholder 7% line. Good example for the memo of how much the threshold choice drives the output.
 * 367 more banks already in breach, listed separately.
 
 ## Files
@@ -171,5 +177,5 @@ Page 1 is the full story on its own: the recommendation, 61 banks flagged in 202
 * `data/phase3/reconciliation.csv`: Gate 1 evidence.
 * `data/phase3/feature_log.csv`: features before and after pruning, with out of time results.
 * `data/phase3/shap_global_full.png` / `.csv`: global SHAP.
-* `data/phase3/model_card_inputs.json`, `ews-xgb-0.1.json`: model settings and the model itself.
+* `data/phase3/model_card_inputs.json`, `ews-xgb-0.2.json`: model settings and the model itself.
 * `data/phase3/pbi/`: the tables the PBIX imports, plus `threshold.json`.

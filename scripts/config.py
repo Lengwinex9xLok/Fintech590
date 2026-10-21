@@ -65,4 +65,4 @@ TEST_END = "2024-12-31"
 ASSET_TIERS = [0, 1e6, 10e6, 100e6, float("inf")]   # $ thousands: <1B, 1-10B, 10-100B, 100B+
 TIER_LABELS = ["<$1B", "$1-10B", "$10-100B", "$100B+"]
 
-MODEL_VERSION = "ews-xgb-0.1"
+MODEL_VERSION = "ews-xgb-0.2"

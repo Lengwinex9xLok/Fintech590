@@ -23,6 +23,7 @@ K_LIST = [50, 100]
 
 f = pd.read_parquet(OUT_DIR / "features.parquet")
 NON_FEATURES = {"rssd_id", "quarter", "form_type", "asset_tier", "target", "in_breach", "exits_panel_4q",
+                "fwd_quarters_observed",
                 "total_assets"}
 FEATS = [c for c in f.columns if c not in NON_FEATURES]
 

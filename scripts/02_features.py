@@ -74,17 +74,28 @@ for c in LEVELS:
 f["in_breach"] = ((f["tier1_leverage"] < STRESS["lev_ratio_lt"]) |
                   (f["noncurrent_ratio"] > STRESS["noncurrent_gt"]) |
                   (f["roa"] < STRESS["roa_lt"])).astype(int)
-fwd = pd.concat([g["in_breach"].shift(-k) for k in range(1, HORIZON_Q + 1)], axis=1)
-f["target"] = fwd.max(axis=1)
-f.loc[fwd.isna().all(axis=1), "target"] = np.nan                    # label not resolved yet
-f["exits_panel_4q"] = fwd.isna().all(axis=1) & (f["quarter"] < f["quarter"].max() - pd.DateOffset(months=12))
+# Look up the bank's breach status at each of the next 4 calendar quarters (t+1..t+4), keyed on
+# quarter end date, so a filing gap is never mistaken for the next quarter.
+# Label rule: 1 if a breach is observed in any filed forward quarter; 0 only if all 4 forward
+# quarters are filed and none breach; otherwise unlabeled (NaN). A bank that stops filing
+# (failure, merger) or a quarter near the end of the panel without an observed breach is NOT a
+# negative: its follow-up is incomplete.
+status = f.set_index(["rssd_id", "quarter"])["in_breach"]
+fwd = pd.concat(
+    [pd.Series(status.reindex(pd.MultiIndex.from_arrays(
+        [f["rssd_id"], f["quarter"] + pd.offsets.QuarterEnd(k)])).values, index=f.index)
+     for k in range(1, HORIZON_Q + 1)], axis=1)
+f["fwd_quarters_observed"] = fwd.notna().sum(axis=1)
+f["target"] = np.select([fwd.eq(1).any(axis=1), f["fwd_quarters_observed"] == HORIZON_Q], [1.0, 0.0], np.nan)
+f["exits_panel_4q"] = (f["fwd_quarters_observed"] < HORIZON_Q) & \
+                      (f["quarter"] <= f["quarter"].max() - pd.offsets.QuarterEnd(HORIZON_Q))
 f.loc[f["in_breach"] == 1, "target"] = np.nan                       # already in breach: exclude
 
 f.to_parquet(OUT_DIR / "features.parquet", index=False)
 
 # --- Long fact table + lineage for Power BI ---------------------------------
 metric_cols = [c for c in f.columns if c not in ("rssd_id", "quarter", "form_type", "asset_tier", "target",
-                                                   "in_breach", "exits_panel_4q")]
+                                                   "in_breach", "exits_panel_4q", "fwd_quarters_observed")]
 fact = f.melt(id_vars=["rssd_id", "quarter"], value_vars=metric_cols, var_name="metric_key", value_name="value")
 fact["is_reported"] = fact["value"].notna().astype(int)
 fact.to_parquet(OUT_DIR / "fact_metric.parquet", index=False)

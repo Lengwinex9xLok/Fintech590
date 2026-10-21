@@ -1,5 +1,5 @@
 {
-  "model_version": "ews-xgb-0.1",
+  "model_version": "ews-xgb-0.2",
   "params": {
     "n_estimators": 400,
     "max_depth": 4,
@@ -10,7 +10,7 @@
     "eval_metric": "aucpr",
     "tree_method": "hist",
     "random_state": 590,
-    "scale_pos_weight": 14.571773026844559
+    "scale_pos_weight": 14.164603761453142
   },
   "features": [
     "noncurrent_ratio",
@@ -19,11 +19,11 @@
     "roa_chg4q",
     "roa_pct",
     "unreal_loss_t1_chg4q",
-    "cre_to_capital",
     "unreal_loss_t1",
-    "brokered_share",
     "tier1_leverage_chg4q",
     "nim",
+    "cre_to_capital",
+    "brokered_share",
     "loans_to_deposits"
   ],
   "train_end": "2021-12-31",

@@ -1,10 +1,10 @@
 {
-  "threshold": 0.9041984677314758,
+  "threshold": 0.9097484946250916,
   "rule": "cutoff that flags 50 banks per quarter on average in the out of time test set (2023-2024)",
   "review_capacity_per_quarter": 50,
-  "test_precision": 0.4225,
-  "test_recall": 0.07802400738688828,
-  "test_base_rate": 0.06282995880953762,
-  "model_version": "ews-xgb-0.1",
+  "test_precision": 0.4075,
+  "test_recall": 0.0752539242843952,
+  "test_base_rate": 0.06387307953171538,
+  "model_version": "ews-xgb-0.2",
   "note": "scores are not calibrated probabilities (scale_pos_weight); read as a ranking"
 }
