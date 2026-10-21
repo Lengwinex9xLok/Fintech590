@@ -28,7 +28,7 @@ git checkout abhi/phase3-ews-pipeline
 pip install -r scripts/requirements.txt
 ```
 
-You only need the raw data if you change the stress threshold. It is not in git (341 MB). Either run `python scripts/00_download_cdr.py` (downloads all 46 quarters into `data/cdr_bulk/`; on the Duke network it may fail on a certificate error, then run `pip install truststore` and retry) or ask Abhi for a copy of `data/cdr_bulk/`.
+The ingested panel is in git (`data/phase3/panel_raw.parquet` and `dim_bank.parquet`), so you can rerun `02_features.py`, `03_model.py` and `04_export_pbi.py` straight away; skip `01_ingest.py`. The raw CDR files (341 MB) are not in git and you only need them to rerun the ingest: run `python scripts/00_download_cdr.py` (on the Duke network it may fail on a certificate error; `pip install truststore` and retry) or ask Abhi for a copy.
 
 ## Step 1: decide the stress threshold
 
@@ -45,7 +45,6 @@ STRESS = {
 About 6.6% of labeled bank quarters breach. Noncurrent loans drive most of it (3 to 7% of banks a year), ROA 2 to 3%, leverage under 2%. If you change it, rerun and every number in this file changes:
 
 ```
-python scripts/01_ingest.py      # only needed once, about 20 seconds
 python scripts/02_features.py
 python scripts/03_model.py
 python scripts/04_export_pbi.py
