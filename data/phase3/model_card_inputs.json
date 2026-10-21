@@ -1,0 +1,32 @@
+{
+  "model_version": "ews-xgb-0.2",
+  "params": {
+    "n_estimators": 400,
+    "max_depth": 4,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 5,
+    "eval_metric": "aucpr",
+    "tree_method": "hist",
+    "random_state": 590,
+    "scale_pos_weight": 14.164603761453142
+  },
+  "features": [
+    "noncurrent_ratio",
+    "log_assets",
+    "tier1_leverage",
+    "roa_chg4q",
+    "roa_pct",
+    "unreal_loss_t1_chg4q",
+    "unreal_loss_t1",
+    "tier1_leverage_chg4q",
+    "nim",
+    "cre_to_capital",
+    "brokered_share",
+    "loans_to_deposits"
+  ],
+  "train_end": "2021-12-31",
+  "gap_end": "2022-12-31",
+  "test_end": "2024-12-31"
+}

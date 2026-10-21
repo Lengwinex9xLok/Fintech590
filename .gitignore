@@ -4,3 +4,13 @@ data/*.txt
 cdr_credentials*.txt
 .DS_Store
 ~$*
+# python
+__pycache__/
+# derived parquet outputs (rebuild with scripts/)
+data/phase3/*.parquet
+# except the ingested panel (22 MB), so teammates can rerun 02 to 04 without the raw CDR files
+!data/phase3/panel_raw.parquet
+!data/phase3/dim_bank.parquet
+# raw CDR bulk files (341 MB; rebuild with scripts/00_download_cdr.py)
+data/cdr_bulk/
+data/_to_delete/
