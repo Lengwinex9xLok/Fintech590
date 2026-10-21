@@ -201,7 +201,7 @@ Phase 3 scales the five bank console to the full universe of about 4,300 banks: 
 | Responsibility | Owner |
 | --- | --- |
 | FFIEC data collection, RSSD verification, metric calculations and exposure note draft | Ziye Luo |
-| Power BI model, FFIEC data connections, DAX conditional formatting, dashboard design and PBIX delivery | Abhinav Saraf |
+| Power BI model, FFIEC data connections, DAX conditional formatting, dashboard design and PBIX delivery | Abhinav Sharaff |
 | Final formula, ranking, visual and submission review | Both team members |
 
 ## Submission Checklist

@@ -2,7 +2,7 @@
 
 **Course:** FINTECH 590.05 Financial Decision Systems
 **Deliverable:** Defense 1, Risk Committee (Lecture 6)
-**Team:** Abhinav Saraf, Ziye Luo
+**Team:** Abhinav Sharaff, Ziye Luo
 **Artifacts covered:** Fintech590_Defense1_RiskConsole.pbix (Parts 1 to 3) and the Institutional Risk Memo
 **AI tools used:** Claude (Anthropic) for the console and initial log (rows 1-17); Codex (OpenAI) for the final memo, raw-source audit, and formula workbook (rows 18-25).
 

@@ -15,7 +15,7 @@ Abhi built the data pipeline, the model and the Power BI tables (this branch). E
 |---|---|---|
 | Pipeline, model, SHAP, Power BI tables | Done (this branch) | Abhi |
 | LLM validation log | Local P1-P16 finalized; selected checks completed and unreviewed items explicitly identified | Loki |
-| Stress threshold | Current research thresholds retained by team agreement reported by Loki; see decision record | Loki + Abhi |
+| Stress threshold | Current research thresholds retained by team decision; see decision record | Loki + Abhi |
 | PBIX dashboard + SHAP panel | Final v0.2 built and tested; see `PBIX_Usage.txt`; Git publication authorized by Loki | Loki |
 | PDF report | Local final `Phase3_Report.pdf`, three pages; evaluated metrics checked by Loki | Loki |
 | Governance memo | Local final `Governance_Memo.pdf`, three pages; read and conclusions accepted by Loki | Loki |
@@ -34,7 +34,7 @@ The ingested panel is in git (`data/phase3/panel_raw.parquet` and `dim_bank.parq
 
 ## Step 1: stress threshold decision
 
-Loki reported teammate agreement on 20 October 2026 to retain the existing settings for Phase 3. `Team_Decision_Record.txt` records the stress target, deduplicated 12-feature model, average 50-review budget and override policy. This closes the project-choice items, not independent human verification or approval for live use. The historical instructions below explain the current configuration and what a later change would require.
+Abhi and Loki agreed on 20 October 2026 to retain the existing settings for Phase 3. `Team_Decision_Record.txt` records the stress target, deduplicated 12-feature model, average 50-review budget and override policy. This closes the project-choice items, not independent human verification or approval for live use. The historical instructions below explain the current configuration and what a later change would require.
 
 The model predicts "does this bank breach the stress threshold within the next 4 quarters". The threshold is our call and the memo has to defend it (slide 39). Current placeholder in `scripts/config.py`:
 
@@ -118,7 +118,7 @@ Peer Median = MAX ( fact_metric[tier_median] )
 
 ## Step 3: spot check the LLM validation log
 
-Closeout status: the log now records Loki's completed selected checks and explicitly marks items not individually checked. The suggestions below remain available for additional review; they are not claims that every check was performed. No separate final PDF read-through by Abhi is asserted.
+Closeout status: the log now records Loki's completed selected checks and explicitly marks items not individually checked. The suggestions below remain available for additional review; they are not claims that every check was performed. Abhi read the final report and memo on 21 October 2026.
 
 For further spot checks, open `Phase 3/LLM_Validation_Log.md` and record what you actually inspect. Examples:
 * P2: open `data/phase3/reconciliation.csv`, confirm `diff` is 0 for every quarter.

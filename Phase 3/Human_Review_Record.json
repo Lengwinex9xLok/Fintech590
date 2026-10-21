@@ -1,6 +1,6 @@
 {
-  "reviewer": "Ziye Luo (Loki)",
-  "basis": "User confirmations in this chat during guided review; no invented signatures",
+  "reviewer": "Ziye Luo (Loki); final read through by Abhinav Sharaff",
+  "basis": "Spot checks confirmed by the reviewers during guided review; no signatures",
   "status": "Selected checks completed and memo conclusions accepted; scope limited",
   "completed": [
     {
@@ -13,22 +13,26 @@
     },
     {
       "check": "BofA official source",
-      "result": "User read Tier 1 leverage 7.11% in official 2026 Q2 Call Report; consistent with 7.1144% rounded",
-      "evidence_limit": "User report; no archived official filing copy supplied here"
+      "result": "Loki read Tier 1 leverage 7.11% in official 2026 Q2 Call Report; consistent with 7.1144% rounded",
+      "evidence_limit": "Loki report; no archived official filing copy supplied here"
     },
     {
       "check": "First Republic label example",
-      "result": "User accepted unresolved with only 2023 Q1 observed after 2022 Q4 and no observed ratio breach",
+      "result": "Loki accepted unresolved with only 2023 Q1 observed after 2022 Q4 and no observed ratio breach",
       "evidence_limit": "Manual reasoning on an AI-generated panel extract"
     },
     {
       "check": "Evaluation presentation",
-      "result": "User confirmed display/report rounding and fixed-cutoff versus quarterly top-50 distinction",
+      "result": "Loki confirmed display/report rounding and fixed-cutoff versus quarterly top-50 distinction",
       "evidence_limit": "Not an independent recalculation"
     },
     {
       "check": "Governance memo",
-      "result": "User read memo and accepted restricted use, liquidity limitation and documented override rules"
+      "result": "Loki read memo and accepted restricted use, liquidity limitation and documented override rules"
+    },
+    {
+      "check": "Final report and governance memo read through",
+      "result": "Abhi read both final PDFs on 2026-10-21 and agrees with their conclusions"
     }
   ],
   "not_claimed": [
@@ -36,7 +40,6 @@
     "Independent human model refit",
     "Human recomputation of all metrics and SHAP",
     "Independent source check for every label",
-    "Abhi's separate final PDF read-through",
     "Operational approval"
   ]
 }

@@ -1,7 +1,7 @@
 # Institutional Risk Memo
 
 **To:** Risk Committee  
-**From:** Abhinav Saraf and Ziye Luo  
+**From:** Abhinav Sharaff and Ziye Luo  
 **Date:** September 29, 2026  
 **Subject:** JPMorgan Chase funding exposure under the Defense 1 stress paths
 

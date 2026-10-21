@@ -6,10 +6,10 @@
   "report_pages": 3,
   "memo_pages": 3,
   "automated_checks": "passed",
-  "human_review": "Selected checks completed with disclosed limits; not a full audit",
+  "human_review": "Selected checks by Loki and a final report and memo read through by Abhi; not a full audit",
   "publication": "Git publication authorized by Loki; see release commit and remote branch; course upload separate",
   "hash_basis": "bytes and sha256 describe committed Git blob content; working_tree fields describe local files before newline normalization. The local ZIP has its own manifest for its exact bytes.",
-  "team_decision": "Retain current settings, per teammate agreement reported by Loki",
+  "team_decision": "Retain current settings, agreed by Abhi and Loki on 2026-10-20",
   "files": {
     "Fintech590_Phase3_UniverseConsole_v02.pbix": {
       "bytes": 57834870,
@@ -54,39 +54,39 @@
       "working_tree_sha256": "ac3a4b38a8a2c724363d21ea67c22c605a7ed21f2c1f181f996465b540478f74"
     },
     "Phase 3/LLM_Validation_Log.md": {
-      "bytes": 16631,
-      "sha256": "51117633c27a14475d103a8384cbe0e89cff180f268bd98e84b89ac11d8c39d1",
-      "git_blob": "9eea132a771b3783cd38d8ee9524b83bfb4bb388",
-      "working_tree_bytes": 16678,
-      "working_tree_sha256": "c95f8cf2017770ed2df31599337c8305224ada23794fcb745b193b5743ae06f8"
+      "bytes": 16670,
+      "sha256": "df15c60f7dff1cb26ed8e7f850c51bad25039bc293e8f7988d42d9207994d54f",
+      "git_blob": "01df95c11e187a989e635d23726a45a15e03b756",
+      "working_tree_bytes": 16670,
+      "working_tree_sha256": "df15c60f7dff1cb26ed8e7f850c51bad25039bc293e8f7988d42d9207994d54f"
     },
     "Phase 3/Team_Decision_Record.txt": {
-      "bytes": 3407,
-      "sha256": "e120fb0690a79ae39d64b942e74aa449b746bd16b1c918c13966a3031bfca659",
-      "git_blob": "b54d7b811778a2d2c1c1020994f780c04f49b1af",
-      "working_tree_bytes": 3407,
-      "working_tree_sha256": "e120fb0690a79ae39d64b942e74aa449b746bd16b1c918c13966a3031bfca659"
+      "bytes": 2616,
+      "sha256": "fd509557b78895428f78db536434032ec3821ab2e38ad84384459f5a5cc5d34c",
+      "git_blob": "371ea18d5eaf546d8c63b6d03a3c00b07e314b72",
+      "working_tree_bytes": 2616,
+      "working_tree_sha256": "fd509557b78895428f78db536434032ec3821ab2e38ad84384459f5a5cc5d34c"
     },
     "Phase 3/Report_Update_Register.json": {
-      "bytes": 4829,
-      "sha256": "86bc3130485a42e4d7a9ffd36903d2e1ca6c12fc98fe1f0c80bac397ccd8a7d4",
-      "git_blob": "cf3abd81ad352e2bcbfd11933e83bba8e83d9b11",
-      "working_tree_bytes": 4978,
-      "working_tree_sha256": "6d614bf077fa68ffc17e3b68b7dbb83178e3ebc87a33bf83873786a05597ebfa"
+      "bytes": 4743,
+      "sha256": "bcaca43bfcf8868058819b5fc20754edec6b61c8fb99d831dd78771bff929b6f",
+      "git_blob": "750796aa5787189553f8290b00f90322f164bf0f",
+      "working_tree_bytes": 4743,
+      "working_tree_sha256": "bcaca43bfcf8868058819b5fc20754edec6b61c8fb99d831dd78771bff929b6f"
     },
     "Phase 3/Document_Release_Checklist.txt": {
-      "bytes": 2342,
-      "sha256": "e0a327395309ac4a575f8351d798e08c196922bf6939187c53b811c7bb714af4",
-      "git_blob": "b150f6823f2373d5466e7ecaf76d906df6fb6252",
-      "working_tree_bytes": 2376,
-      "working_tree_sha256": "8fc94c9f8c8bd584eb7ad67609f29413d703c09b9ce2f159747f2d1b15afa207"
+      "bytes": 2355,
+      "sha256": "1b4c93c33d547e6af4757a9b2ab7fcfba494307d956bbf299c13193a8486b063",
+      "git_blob": "da585c7f1c5785b6977bc34d3b0b1829a2a27304",
+      "working_tree_bytes": 2355,
+      "working_tree_sha256": "1b4c93c33d547e6af4757a9b2ab7fcfba494307d956bbf299c13193a8486b063"
     },
     "Phase 3/Human_Review_Record.json": {
-      "bytes": 1690,
-      "sha256": "6f7b4c97f4d8a25dc4b800c8f60264c990044fcfcc387d2bf05319a07daf3f98",
-      "git_blob": "43cbc578bcc52722d8bc5229621b27bcaaff5226",
-      "working_tree_bytes": 1731,
-      "working_tree_sha256": "3cedb80878444240a25f5f6d2261d03b9af91dd47dbf4c46255eeceaf1813002"
+      "bytes": 1851,
+      "sha256": "9a5949b035b42591e70b4444be5116f7003b10cc39d2b1484e67b8b9cd732ba7",
+      "git_blob": "dbac08ae0a9193f65c15716a8e3ca00b3f9b6a8d",
+      "working_tree_bytes": 1851,
+      "working_tree_sha256": "9a5949b035b42591e70b4444be5116f7003b10cc39d2b1484e67b8b9cd732ba7"
     },
     "Phase 3/Phase3_Export_Review.json": {
       "bytes": 4118,
@@ -96,11 +96,11 @@
       "working_tree_sha256": "7f225a35c19858fb425c7a537540cfb173a8b55b9e54e11233fa713d94defb05"
     },
     "Phase 3/Submission_Guide.txt": {
-      "bytes": 2587,
-      "sha256": "938fe058459e1ec821dd33d7aab2f5150b5de21612d37d9d10c9ea0579fbde26",
-      "git_blob": "9f4017293e2a98eded36e9d009f5fae802e04664",
-      "working_tree_bytes": 2587,
-      "working_tree_sha256": "938fe058459e1ec821dd33d7aab2f5150b5de21612d37d9d10c9ea0579fbde26"
+      "bytes": 2609,
+      "sha256": "3e59a44ac271dc3f63cfe6c86481bd92b2bdd2b2c23d1f5cc9f97138f465fc89",
+      "git_blob": "34975fa4e64192d0ef91cb0712ca13366a5f32fa",
+      "working_tree_bytes": 2609,
+      "working_tree_sha256": "3e59a44ac271dc3f63cfe6c86481bd92b2bdd2b2c23d1f5cc9f97138f465fc89"
     },
     "Phase 3/PBIX_Usage.txt": {
       "bytes": 2744,

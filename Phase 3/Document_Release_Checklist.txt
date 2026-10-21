@@ -5,7 +5,7 @@ DONE
 - Corrected calendar labels independently reconstructed from the committed ingested panel.
 - Export targets, fixed-cutoff and top-50 results, historical cases and BofA checked.
 - Current deduplicated 12-feature model retained; naive model comparison disclosed.
-- Team decision to retain current settings recorded from Loki's report of teammate agreement.
+- Team decision to retain current settings recorded (Abhi and Loki, 20 October 2026).
 - Stress target, deduplicated 12 features, average 50-review budget and override policy retained.
 - Report and memo updated to v0.2 and the recorded team decision; no model or data changes.
 - Both three-page PDFs rendered and visually inspected on every page.
@@ -27,7 +27,8 @@ PUBLICATION AND COURSE SUBMISSION
 
 REVIEW LIMITS PRESERVED
 - Unreviewed items are disclosed in the log, not converted into passed human checks.
-- No separate final read-through by Abhi, full source audit or operational approval is asserted.
+- Abhi read the final report and memo on 21 October 2026.
+- No full source audit or operational approval is asserted.
 
 Scores remain uncalibrated and the evaluation period is reused for selection.
 Labels are corrected; historical source vintages and all raw filings are not independently validated.

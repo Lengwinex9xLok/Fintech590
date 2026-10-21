@@ -25,9 +25,9 @@ Supporting evidence retained with the core files
 
 Review scope
 Loki confirmed selected dashboard/source/label/display checks and read and accepted
-the memo. The log explicitly marks items not individually checked by a human.
+the memo. Abhi read the final report and memo on 21 October 2026. The log explicitly marks items not individually checked by a human.
 Neither the course package nor these spot checks certify full independent validation
-or approval for operational use. No teammate signature is implied.
+or approval for operational use.
 
 Local ZIP and folder
 The separately prepared Fintech590_Phase3_Submission.zip is a delivery convenience,

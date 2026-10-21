@@ -118,7 +118,7 @@
   "team_decisions_pending": [],
   "team_decision": {
     "recorded_date": "2026-10-20",
-    "basis": "Loki reported that he consulted his teammate and they agreed to retain the current settings",
+    "basis": "Abhi and Loki agreed to retain the current settings",
     "record": "Team_Decision_Record.txt",
     "stress_triggers": {
       "tier1_leverage_below_percent": 7.0,
@@ -143,7 +143,6 @@
     "Independent human model refit",
     "Human recomputation of all metrics and SHAP",
     "Independent source check for every label",
-    "Abhi's separate final PDF read-through",
     "Operational approval"
   ]
 }
