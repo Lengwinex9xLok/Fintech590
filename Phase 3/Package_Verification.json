@@ -1,0 +1,74 @@
+{
+  "source_commit": "05b38f795f3981ff798a9ab17d753aac39bd76c4",
+  "model_version": "ews-xgb-0.2",
+  "pages": 4,
+  "visuals": 71,
+  "report_pages": 3,
+  "memo_pages": 3,
+  "automated_checks": "passed",
+  "human_review": "Selected checks completed with disclosed limits; not a full audit",
+  "publication": "Git publication authorized by Loki; see release commit and remote branch; course upload separate",
+  "team_decision": "Retain current settings, per teammate agreement reported by Loki",
+  "files": {
+    "Fintech590_Phase3_UniverseConsole_v02.pbix": {
+      "bytes": 57834870,
+      "sha256": "3324413188cd4665a1d4e75bcb43c9a877c7ed4ce026c913b57688630c0b4306"
+    },
+    "Phase 3\\Phase3_Report.pdf": {
+      "bytes": 118401,
+      "sha256": "18fe1d443f8f543f0c955adf34641c6a0ba2880bf58f3f168214bb57c2ab5b28"
+    },
+    "Phase 3\\Governance_Memo.pdf": {
+      "bytes": 109907,
+      "sha256": "c88aad7188cbd79de5962c98fde617f4d596aaecab994b901b260427b186882f"
+    },
+    "Phase 3\\Phase3_Report.docx": {
+      "bytes": 40963,
+      "sha256": "f5d184d9ea46b9c7820765e7ecde62c0bb4e33e676f66d952177a6697f35415a"
+    },
+    "Phase 3\\Governance_Memo.docx": {
+      "bytes": 40518,
+      "sha256": "573e0e378c0c5ed8bb6c01eaea69bfd4a9b4e1308433368a2a96c2c16ef3b4af"
+    },
+    "Phase 3\\Phase3_Report.html": {
+      "bytes": 10267,
+      "sha256": "ac3a4b38a8a2c724363d21ea67c22c605a7ed21f2c1f181f996465b540478f74"
+    },
+    "Phase 3\\LLM_Validation_Log.md": {
+      "bytes": 16678,
+      "sha256": "c95f8cf2017770ed2df31599337c8305224ada23794fcb745b193b5743ae06f8"
+    },
+    "Phase 3\\Team_Decision_Record.txt": {
+      "bytes": 3407,
+      "sha256": "e120fb0690a79ae39d64b942e74aa449b746bd16b1c918c13966a3031bfca659"
+    },
+    "Phase 3\\Report_Update_Register.json": {
+      "bytes": 4978,
+      "sha256": "6d614bf077fa68ffc17e3b68b7dbb83178e3ebc87a33bf83873786a05597ebfa"
+    },
+    "Phase 3\\Document_Release_Checklist.txt": {
+      "bytes": 2376,
+      "sha256": "8fc94c9f8c8bd584eb7ad67609f29413d703c09b9ce2f159747f2d1b15afa207"
+    },
+    "Phase 3\\Human_Review_Record.json": {
+      "bytes": 1731,
+      "sha256": "3cedb80878444240a25f5f6d2261d03b9af91dd47dbf4c46255eeceaf1813002"
+    },
+    "Phase 3\\Phase3_Export_Review.json": {
+      "bytes": 4244,
+      "sha256": "7f225a35c19858fb425c7a537540cfb173a8b55b9e54e11233fa713d94defb05"
+    },
+    "Phase 3\\Submission_Guide.txt": {
+      "bytes": 2587,
+      "sha256": "938fe058459e1ec821dd33d7aab2f5150b5de21612d37d9d10c9ea0579fbde26"
+    },
+    "Phase 3\\PBIX_Usage.txt": {
+      "bytes": 2744,
+      "sha256": "127cf533a7f710613ddbb56c6ec81c776364f0f67a0026fffb50e69995f1398a"
+    },
+    "Phase 3\\FirstRepublic_Label_Spotcheck.html": {
+      "bytes": 3822,
+      "sha256": "4dfa869d0a4b5a76c3884ffac0a860cf8650eea6c53eb4099d615504d01054e2"
+    }
+  }
+}

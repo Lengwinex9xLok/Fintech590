@@ -14,11 +14,13 @@ Abhi built the data pipeline, the model and the Power BI tables (this branch). E
 | Deliverable | Status | Owner |
 |---|---|---|
 | Pipeline, model, SHAP, Power BI tables | Done (this branch) | Abhi |
-| LLM validation log | Draft done in `Phase 3/LLM_Validation_Log.md` (rows P1 to P11). Needs your spot check column | Loki |
-| Stress threshold | **Placeholder. Decide first** | Loki + Abhi |
-| PBIX dashboard + SHAP panel | Not started. Tables are ready | Loki |
-| PDF report | Not started | Loki |
-| Governance memo | Not started | Loki |
+| LLM validation log | Local P1-P16 finalized; selected checks completed and unreviewed items explicitly identified | Loki |
+| Stress threshold | Current research thresholds retained by team agreement reported by Loki; see decision record | Loki + Abhi |
+| PBIX dashboard + SHAP panel | Final v0.2 built and tested; see `PBIX_Usage.txt`; Git publication authorized by Loki | Loki |
+| PDF report | Local final `Phase3_Report.pdf`, three pages; evaluated metrics checked by Loki | Loki |
+| Governance memo | Local final `Governance_Memo.pdf`, three pages; read and conclusions accepted by Loki | Loki |
+
+The final file list and course-upload steps are in `Submission_Guide.txt`. Old drafts are preserved locally and excluded from this release. Loki authorized Git publication; the commit history records the release. No course upload is claimed. Selected human checks do not certify full independent validation; `Human_Review_Record.json` and the log retain that distinction.
 
 ## Step 0: setup (10 minutes)
 
@@ -30,7 +32,9 @@ pip install -r scripts/requirements.txt
 
 The ingested panel is in git (`data/phase3/panel_raw.parquet` and `dim_bank.parquet`), so you can rerun `02_features.py`, `03_model.py` and `04_export_pbi.py` straight away; skip `01_ingest.py`. The raw CDR files (341 MB) are not in git and you only need them to rerun the ingest: run `python scripts/00_download_cdr.py` (on the Duke network it may fail on a certificate error; `pip install truststore` and retry) or ask Abhi for a copy.
 
-## Step 1: decide the stress threshold
+## Step 1: stress threshold decision
+
+Loki reported teammate agreement on 20 October 2026 to retain the existing settings for Phase 3. `Team_Decision_Record.txt` records the stress target, deduplicated 12-feature model, average 50-review budget and override policy. This closes the project-choice items, not independent human verification or approval for live use. The historical instructions below explain the current configuration and what a later change would require.
 
 The model predicts "does this bank breach the stress threshold within the next 4 quarters". The threshold is our call and the memo has to defend it (slide 39). Current placeholder in `scripts/config.py`:
 
@@ -54,7 +58,7 @@ python scripts/04_export_pbi.py
 
 ## Step 2: build the PBIX
 
-Save it as `Fintech590_Phase3_UniverseConsole.pbix` in the repo root.
+Updated local file: `Fintech590_Phase3_UniverseConsole_v02.pbix` in the repo root. The older file without `_v02` is preserved, not the current deliverable.
 
 **Load** (Get Data → Parquet / Text): everything in `data/phase3/pbi/`.
 
@@ -114,7 +118,9 @@ Peer Median = MAX ( fact_metric[tier_median] )
 
 ## Step 3: spot check the LLM validation log
 
-Open `Phase 3/LLM_Validation_Log.md`. For each row P1 to P11, check one thing yourself and write what you checked in the "Human spot check" column. Quick ones:
+Closeout status: the log now records Loki's completed selected checks and explicitly marks items not individually checked. The suggestions below remain available for additional review; they are not claims that every check was performed. No separate final PDF read-through by Abhi is asserted.
+
+For further spot checks, open `Phase 3/LLM_Validation_Log.md` and record what you actually inspect. Examples:
 * P2: open `data/phase3/reconciliation.csv`, confirm `diff` is 0 for every quarter.
 * P3: pick any bank on the FFIEC CDR site (cdr.ffiec.gov, Institution Reports), compare its Tier 1 leverage for 2026 Q2 with `fact_metric`.
 * P10: in the PBIX, confirm no bank with status "Already in breach" appears on the watchlist.
@@ -158,11 +164,11 @@ Page 1 is the full story on its own: the recommendation, 61 banks flagged in 202
 **Target label fix (ews-xgb-0.2, found by Loki)**
 * Version 0.1 labeled a bank quarter as "no breach" even when some of the next 4 quarters were never filed (the bank failed, merged, or the quarter was near the end of the data). That counted incomplete follow up as a negative.
 * Now: 1 if a breach is observed in any filed forward quarter; 0 only if all 4 forward quarters are filed with no breach; otherwise unlabeled. Forward quarters are matched by calendar date, so a filing gap is never mistaken for the next quarter.
-* 16,450 bank quarters moved from 0 to unlabeled (including SVB, Signature and First Republic at 2022 Q4). No positive labels changed. Labeled bank quarters: 200,238.
+* 16,450 bank quarters moved from 0 to unlabeled. First Republic at 2022 Q4 is one example; SVB and Signature at that quarter were already unlabeled in v0.1. No original positive labels changed. Labeled bank quarters: 200,238.
 
 **Model** (train 2017 to 2021, gap 2022, test 2023 to 2024)
 * Train 94,339 bank quarters (base 6.6%), test 33,911 (base 6.4%).
-* Test base rate 6.4%. PR AUC 0.208 with the final 12 features (0.227 with all 49). Note: after the label fix (see below) the naive top 12 cut scores 0.221, better than our correlation aware cut. Worth a decision: keep the deduped set for interpretability, or switch to the naive set.
+* Test base rate 6.4%. Average precision 0.208 with the final 12 features (0.227 with all 49). After the label fix the naive top 12 scores 0.221. The team retains deduped 12 for broader driver coverage while accepting lower AP; no superiority claim is made.
 * Flag threshold 0.910, sized so the committee reviews about 50 banks a quarter. Test precision 41% (6.4x the base rate), recall 8%.
 * 12 features kept by mean |SHAP|: noncurrent loans, bank size, Tier 1 leverage, ROA 4Q change, ROA percentile in size tier, unrealized losses 4Q change, CRE to capital, unrealized losses to Tier 1, brokered deposit share, leverage 4Q change, net interest margin, loans to deposits.
 

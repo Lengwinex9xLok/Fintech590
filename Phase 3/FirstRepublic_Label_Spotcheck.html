@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><meta charset="utf-8">
+<title>First Republic label spot check</title>
+<style>body{font:17px/1.5 Georgia,serif;max-width:1300px;margin:36px auto;padding:0 24px;color:#17263c;background:#fff}h1{font-size:29px}h2{font-size:22px;margin-top:28px}table{border-collapse:collapse;width:100%;font:15px/1.4 Arial,sans-serif}td,th{border:1px solid #cbd1d8;padding:10px;text-align:left}th{background:#edf1f6}code{font-size:14px;overflow-wrap:anywhere}.scroll{overflow-x:auto}.muted{color:#546273}li{margin:8px 0}</style>
+<h1>First Republic label spot check</h1>
+<p><strong>Bank:</strong> First Republic Bank · <strong>RSSD:</strong> 4114567 · <strong>Scoring date:</strong> 31 December 2022</p>
+<p class="muted">AI-generated extract from the committed ingested panel and score export. This is not a new official filing and does not certify that every absent panel row represents a missing original filing. No model or input data was changed.</p>
+<h2>1. Look at the four forward calendar quarters</h2>
+<p>The 2022 Q4 row provides context. Only 2023 Q1–Q4 count toward the four-quarter outcome.</p>
+<div class="scroll"><table><thead><tr><th>Role</th><th>Quarter end</th><th>Panel record</th><th>Tier 1 leverage</th><th>Noncurrent / loans</th><th>Annualized income / assets</th><th>Net income YTD ($000)</th><th>Any trigger breached?</th></tr></thead><tbody><tr><td>Scoring quarter</td><td>2022-12-31</td><td>Present</td><td>8.5053%</td><td>0.0652%</td><td>0.7833%</td><td>1,665,627</td><td>No</td></tr><tr><td>Forward 1</td><td>2023-03-31</td><td>Present</td><td>8.2459%</td><td>0.0753%</td><td>0.4621%</td><td>269,102</td><td>No</td></tr><tr><td>Forward 2</td><td>2023-06-30</td><td>Absent from panel</td><td>—</td><td>—</td><td>—</td><td>—</td><td>Unknown</td></tr><tr><td>Forward 3</td><td>2023-09-30</td><td>Absent from panel</td><td>—</td><td>—</td><td>—</td><td>—</td><td>Unknown</td></tr><tr><td>Forward 4</td><td>2023-12-31</td><td>Absent from panel</td><td>—</td><td>—</td><td>—</td><td>—</td><td>Unknown</td></tr></tbody></table></div>
+<p>Working breach rule: leverage &lt;7%; noncurrent loans / loans &gt;3%; or annualized income / quarter-end assets &lt;−0.5%. Any one trigger is enough. Annualized income/assets = YTD net income × (4 / quarter number) / quarter-end assets. Missing periods are not zero.</p>
+<h2>2. Compare with the actual exported result</h2>
+<table><tr><th>Field</th><th>Saved value at 2022 Q4</th></tr>
+<tr><td>target</td><td>NaN / null (unlabeled)</td></tr>
+<tr><td>outcome</td><td>Not yet resolved</td></tr>
+<tr><td>in_breach</td><td>0</td></tr>
+<tr><td>flag</td><td>0</td></tr>
+<tr><td>risk_rank</td><td>2832</td></tr></table>
+<h2>3. Your manual check</h2>
+<ol><li>How many of the four future quarters are present?</li>
+<li>Does any observed future quarter breach one of the three working triggers?</li>
+<li>Under the rule below, should the label be 0, 1, or unresolved? Compare your answer with section 2.</li></ol>
+<p><strong>Label rule:</strong> observed breach within the next four quarters → 1; all four observed without breach → 0; incomplete follow-up with no observed breach → unresolved. A bank already in breach at the scoring date is excluded separately.</p>
+<p>The model flag is a prediction, while target/outcome records observed follow-up under the research definition. They are different fields. Do not treat the absence of a modeled ratio breach as proof that the bank did not fail.</p>
+<h2>Source files</h2><p><code>data\phase3\panel_raw.parquet</code><br><code>SHA256 65f077aa7b054ddfc290505953efa2644d2bb3532885c8b8d43cd0636f60a3c6</code></p><p><code>data\phase3\pbi\fact_score.parquet</code><br><code>SHA256 f620f528d20b6160c8a57f4d983ac12a93edf963a1d8bf44d95539a3b9048f98</code></p></html>

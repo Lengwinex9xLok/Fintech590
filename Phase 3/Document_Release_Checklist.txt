@@ -1,0 +1,34 @@
+PHASE 3 V0.2 RELEASE CHECKLIST
+
+DONE
+- Source synchronized to 05b38f795f3981ff798a9ab17d753aac39bd76c4.
+- Corrected calendar labels independently reconstructed from the committed ingested panel.
+- Export targets, fixed-cutoff and top-50 results, historical cases and BofA checked.
+- Current deduplicated 12-feature model retained; naive model comparison disclosed.
+- Team decision to retain current settings recorded from Loki's report of teammate agreement.
+- Stress target, deduplicated 12 features, average 50-review budget and override policy retained.
+- Report and memo updated to v0.2 and the recorded team decision; no model or data changes.
+- Both three-page PDFs rendered and visually inspected on every page.
+- Native PBIX refresh, four-page inspection, BofA overflow drill-through and save completed.
+- Byte-identical PBIX copy freshly opened without refresh; cached data and theme verified.
+- Guided human checks reported by Loki: overview totals; BofA overflow/detail and drill-through;
+  official BofA leverage of 7.11% versus imported 7.1144%; First Republic's single unresolved
+  label example; evaluation display/report consistency and distinct top-50 precision.
+- These are selected spot checks, not a full source audit or independent model recalculation.
+- Loki confirmed reading the governance memo and accepting its core conclusions.
+- All validation-log rows now state their human-review scope or lack of individual review.
+- Final report and memo filenames omit DRAFT; earlier drafts are preserved, not for submission.
+
+PUBLICATION AND COURSE SUBMISSION
+- Loki explicitly authorized Git commit/push of final files, excluding drafts.
+- The release commit and remote main branch are the publication record.
+- Course upload has not been authorized or performed in this workflow.
+- Confirm the instructor's actual upload channel, link/attachment requirements and deadline.
+
+REVIEW LIMITS PRESERVED
+- Unreviewed items are disclosed in the log, not converted into passed human checks.
+- No separate final read-through by Abhi, full source audit or operational approval is asserted.
+
+Scores remain uncalibrated and the evaluation period is reused for selection.
+Labels are corrected; historical source vintages and all raw filings are not independently validated.
+Old files were backed up under work/backups/pre_v02_20261021.

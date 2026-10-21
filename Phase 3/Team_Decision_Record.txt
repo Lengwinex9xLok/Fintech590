@@ -1,0 +1,60 @@
+PHASE 3 TEAM DECISION
+
+Recorded on 2026-10-20 for model ews-xgb-0.2, source commit
+05b38f795f3981ff798a9ab17d753aac39bd76c4.
+
+Basis: Loki reported in this chat that he consulted his teammate and they agreed
+to retain the current settings. This record documents that reported decision;
+it does not supply a teammate signature or certify completion of human checks.
+
+1. Stress target
+Retain a breach when any of the following holds: Tier 1 leverage below 7.0%,
+noncurrent loans / total loans above 3.0%, or annualized net income /
+quarter-end assets below -0.5%. The prediction horizon remains the next four
+calendar quarters. These define a course-project screen for capital, credit
+and earnings deterioration, not bank failure or a deposit run. The numerical
+cutoffs are research assumptions, not regulatory standards or empirically
+optimized boundaries. Their sensitivity has not been established by rerunning
+alternative target definitions.
+
+2. Working model
+Retain the current deduplicated 12-feature model and its existing exports.
+It reduces repeated versions of the same ratios and preserves broader driver
+coverage. We accept its lower development average precision: 0.2077 compared
+with 0.2208 for the naive 12-feature model. We do not claim superior predictive
+performance or statistical equivalence. No model switch or retraining is implied.
+
+3. Review capacity and score cutoff
+Retain the fixed cutoff 0.9097484946250916, chosen for an average of 50 reviews
+per quarter in the 2023-2024 development evaluation. Fifty is an assumed review
+budget for the project, not measured staffing capacity or a per-quarter cap.
+The current 61 flags remain visible: 50 priority slots and 11 overflow flags.
+Already-breached banks remain separate. Scores are not calibrated probabilities.
+
+4. Override policy
+Retain the memo's policy design: an independent reviewer proposes additions or
+removals using dated evidence, and a committee chair approves them. Preserve
+the original score and model flag, and log the decision and supporting evidence.
+Retain escalation when unique banks added or removed exceed 20% of the original
+pre-override flagged list; escalate any override when that list is empty.
+The 20% line is a team-set project rule, not a validated or regulatory threshold.
+The roles describe a proposed pilot; this decision does not appoint staff,
+authorize live use, or certify that the controls have been operated.
+
+Review closeout
+- Loki confirmed the overview totals, BofA detail/drill-through, official BofA
+  leverage at 7.11%, the First Republic unresolved-label example and the
+  report/dashboard evaluation definitions and rounding.
+- Loki confirmed reading the governance memo and accepting its intended-use
+  restriction, liquidity limitation and evidence-based override rules.
+- Human_Review_Record.json and the validation log preserve the scope of these
+  checks and identify unreviewed items. This is not a full independent audit;
+  no separate final read-through by Abhi is asserted.
+
+Publication authorization
+- Loki explicitly authorized committing and pushing the formal files to GitHub,
+  excluding old drafts. The repository commit history records the release.
+- Course submission remains separate; confirm the actual submission channel.
+
+This decision changes documentation only. It does not change data, features,
+model weights, target labels, score cutoffs or PBIX calculations.

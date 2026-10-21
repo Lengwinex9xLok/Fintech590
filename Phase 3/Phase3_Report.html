@@ -1,0 +1,79 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><title>Bank early warning report</title>
+<style>
+        *{box-sizing:border-box}body{margin:0;background:#eceef1;color:#111;font:12pt/1.35 'Times New Roman',serif}
+        main{max-width:8.5in;margin:24px auto}section{background:white;padding:.68in .8in;min-height:11in;margin:0 0 20px}
+        h1{font-size:22pt;line-height:1.1;margin:0 0 8px}h2{font-size:13pt;margin:17px 0 6px}
+        p{margin:0 0 10px}.subtitle{font-size:10.5pt;margin-bottom:18px}table{border-collapse:collapse;width:100%;font-size:11pt;margin:12px 0}
+        td,th{border:1px solid #d9d9d9;padding:8px;text-align:left;width:50%}th{background:#e9edf1}tbody tr:nth-child(even){background:#f7f8fa}
+        a{color:#182d48}ul.refs{padding-left:18px;font-size:10pt;line-height:1.4}.refs li{margin-bottom:4px}
+        @media(max-width:700px){main{margin:0}section{padding:24px;min-height:auto}}
+        @page{size:Letter;margin:0}@media print{body{background:#fff;font-size:11pt}main{margin:0;max-width:none}section{margin:0;break-after:page;min-height:0;padding:.68in .8in}section:last-child{break-after:auto}h2{break-after:avoid}table,p,li{orphans:3;widows:3}a{color:#000;text-decoration:none}}
+        </style></head><body><main>
+<section>
+<h1>Bank early warning report</h1>
+<p class='subtitle'>FINTECH 590 Phase 3 | Executive summary | Model ews-xgb-0.2</p>
+<h2>Recommendation</h2>
+<p>We recommend a limited quarterly review pilot for credit, earnings and capital deterioration, subject to independent human validation. The team has agreed to retain the current research thresholds. The model ranks banks not already in breach on crossing a trigger within the next four calendar quarters. Require a separate liquidity review. Do not use the score as a failure probability or an automatic decision.</p>
+<h2>The current screen</h2>
+<table><thead><tr><th scope='col'>2026 Q2 result</th><th scope='col'>Audited export</th></tr></thead><tbody>
+<tr><td>Banks in the panel</td><td>4,297</td></tr>
+<tr><td>Flagged for forward review</td><td>61, including 42 new flags</td></tr>
+<tr><td>Deposit share at flagged banks</td><td>10.36 percent; 0.12 percent excluding BofA NA</td></tr>
+<tr><td>Already in breach and reviewed separately</td><td>367</td></tr>
+</tbody></table>
+<p>The fixed-cutoff development evaluation has 40.75 percent precision, 7.53 percent recall and 0.208 average precision, against a 6.39 percent base rate. This concentrates review effort but misses most labeled future breaches. These results do not establish readiness for autonomous use. [S3, S4, S8]</p>
+<h2>What changes the decision</h2>
+<p>SVB, Signature and First Republic were all unflagged at 2022 Q4 under v0.2. Quarterly deterioration thresholds do not directly target deposit runs. BofA NA, meanwhile, ranks 54 and accounts for nearly all flagged deposits. Review both the liquidity blind spot and concentration before relying on the queue. [S1, S7, S8]</p>
+<h2>What has been corrected</h2>
+<p>Version 0.2 uses actual calendar quarters and no longer treats incomplete non-breach follow-up as a negative. Automated review reproduced 16,450 changes from 0 to unresolved, with no original positives changed. Human spot checks covered BofA leverage, the First Republic label example and dashboard/report consistency, not every filing or calculation. [S2, S8]</p>
+<h2>Next action</h2>
+<p>The team retains the deduplicated 12-feature model, current target, average 50-review budget and memo&#x27;s override policy for Phase 3, accepting the stronger naive-model average precision. Preserve the validation log&#x27;s review limits. Keep all 61 flags visible, including the 11 beyond the initial 50 priority slots.</p>
+</section>
+<section>
+<h1>Data and model design</h1>
+<p class='subtitle'>Coverage and label construction</p>
+<h2>Data scope and lineage</h2>
+<p>The unit is a Call Report filing bank identified by RSSD ID and quarter, not its parent holding company. The committed ingested panel contains 239,553 bank-quarters for 6,581 banks across 46 quarters from 2015 Q1 to 2026 Q2. Stored reconciliation differences by form are zero. Counts alone do not validate individual values; raw CDR ZIPs were not independently re-ingested in this review. [S5, S6]</p>
+<h2>Current team defined stress triggers</h2>
+<table><thead><tr><th scope='col'>Trigger</th><th scope='col'>Research assumption</th></tr></thead><tbody>
+<tr><td>Tier 1 leverage</td><td>Below 7.0 percent</td></tr>
+<tr><td>Noncurrent loans divided by total loans</td><td>Above 3.0 percent</td></tr>
+<tr><td>Annualized net income divided by quarter-end assets</td><td>Below negative 0.5 percent</td></tr>
+</tbody></table>
+<p>Any trigger defines a breach. The team retains these research cutoffs to define capital, credit and earnings deterioration; they are not regulatory standards or demonstrated optimal choices. Alternative target thresholds have not been tested. Banks already in breach at the scoring quarter are shown separately from the forward-risk watchlist. [S1, S2]</p>
+<h2>Corrected four quarter labels</h2>
+<p>A positive requires an observed breach in one of the next four calendar quarters. A negative requires all four future quarters to be filed without a breach. Otherwise the outcome is unresolved. Matching by quarter-end date prevents a filing gap from shifting the window. Recomputing labels from the committed ingested panel matched every exported target; no negative had incomplete follow-up. The model excludes the future-observation count from its inputs. [S2, S3, S8]</p>
+<h2>Training and evaluation</h2>
+<p>The model is fitted on 94,339 resolved bank-quarters from 2017 to 2021, with a 2022 gap year and 33,911 development-evaluation observations from 2023 to 2024. XGBoost reweights the positive class. Variants are compared and the score cutoff is chosen on that evaluation period, so it is not an untouched final holdout. Source features use the scoring quarter or earlier, but historical reporting vintages were not reconstructed. [S1, S3, S4]</p>
+<h2>Use the actual ratio definitions</h2>
+<p>The feature called nim is annualized NII divided by quarter-end total assets. The dashboard labels it NII to total assets because standard NIM uses average earning assets. ROA likewise uses quarter-end rather than average assets. CRE to capital uses a Tier 1 fallback when total risk-based capital is missing. Disclose these proxies when comparing banks. [S2, S7]</p>
+</section>
+<section>
+<h1>Evaluation and decision limits</h1>
+<p class='subtitle'>Model comparison and the BofA case</p>
+<h2>Model selection is a tradeoff</h2>
+<table><thead><tr><th scope='col'>Variant</th><th scope='col'>Average precision and quarterly top 50 precision</th></tr></thead><tbody>
+<tr><td>Full 49 features</td><td>0.2274 and 44.25 percent</td></tr>
+<tr><td>Naive top 12</td><td>0.2208 and 42.50 percent</td></tr>
+<tr><td>Deduplicated 12 used in v0.2</td><td>0.2077 and 42.25 percent</td></tr>
+</tbody></table>
+<p>We retain the working deduplicated model to reduce repeated versions of the same ratios and preserve broader driver coverage, accepting lower average precision. Its quarterly top 50 precision differs from naive by one hit across 400 reviews. This is not evidence of statistical equivalence or superior prediction. The metric labeled PR AUC in the source is sklearn average precision, not trapezoidal area. [S3, S8]</p>
+<h2>Keep review policies distinct</h2>
+<p>A fixed cutoff of 0.909748 flags 400 observations across eight evaluation quarters: precision 40.75 percent and recall 7.53 percent. It averages 50 reviews per quarter but does not cap each quarter. Selecting exactly the top 50 each quarter gives precision 42.25 percent and recall 7.80 percent. Both use a 6.39 percent base rate. The capacity of 50 remains a team assumption. [S3, S4, S8]</p>
+<h2>Review BofA rather than assuming distress</h2>
+<p>At 2026 Q2, BofA NA has score 0.9141, rank 54 and leverage 7.1144 percent. Leverage is its largest positive SHAP contribution, although it is above the current 7 percent breach trigger. The 7 percent target trigger and 0.909748 score cutoff serve different purposes. Its flag makes deposit coverage highly concentrated; this calls for case review, not a failure claim. Changing a threshold and retraining is still needed to establish target-threshold sensitivity. [S1, S8]</p>
+<h2>Explain scores with the correct model</h2>
+<p>Global SHAP describes the full candidate model; local SHAP explains the final 12-feature model in log-odds. Neither establishes causality. Automated reconstruction of 35,573 local scores matched exports within 0.00000075. Model fitting was not independently rerun. [S3, S8]</p>
+<ul class='refs'>
+<li>S1 <a href='https://github.com/Lengwinex9xLok/Fintech590/blob/05b38f795f3981ff798a9ab17d753aac39bd76c4/scripts/config.py#L50-L63'>Stress definition and time split</a></li>
+<li>S2 <a href='https://github.com/Lengwinex9xLok/Fintech590/blob/05b38f795f3981ff798a9ab17d753aac39bd76c4/scripts/02_features.py#L38-L95'>Feature construction and corrected label logic</a></li>
+<li>S3 <a href='https://github.com/Lengwinex9xLok/Fintech590/blob/05b38f795f3981ff798a9ab17d753aac39bd76c4/scripts/03_model.py'>Model fitting and feature selection</a></li>
+<li>S4 <a href='https://github.com/Lengwinex9xLok/Fintech590/blob/05b38f795f3981ff798a9ab17d753aac39bd76c4/scripts/04_export_pbi.py'>Watchlist cutoff and export rules</a></li>
+<li>S5 <a href='https://github.com/Lengwinex9xLok/Fintech590/blob/05b38f795f3981ff798a9ab17d753aac39bd76c4/data/phase3/reconciliation.csv'>Stored reconciliation</a></li>
+<li>S6 <a href='https://github.com/Lengwinex9xLok/Fintech590/blob/05b38f795f3981ff798a9ab17d753aac39bd76c4/Phase%203/Team_Handoff.md'>Pipeline settings and working handoff</a></li>
+<li>S7 <a href='https://www.federalreserve.gov/publications/2023-may-supervision-and-regulation-report-banking-system-conditions.htm'>Federal Reserve May 2023 banking conditions and ratio definitions</a></li>
+<li>S8 <a href='Phase3_Export_Review.json'>Automated v0.2 review with source hashes</a></li>
+</ul>
+</section>
+</main></body></html>

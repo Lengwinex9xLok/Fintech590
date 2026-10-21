@@ -1,0 +1,47 @@
+Phase 3 Power BI dashboard
+
+File: ../Fintech590_Phase3_UniverseConsole_v02.pbix
+Source snapshot: PR #4, commit 05b38f795f3981ff798a9ab17d753aac39bd76c4.
+Model: ews-xgb-0.2, current deduplicated 12-feature baseline.
+The teammate's corrected model and cutoff are retained, without independent model fitting.
+
+Expected latest totals: 4,297 banks; 61 flags; 42 new; 367 already in breach;
+flagged deposit share 10.3608%. BofA NA is in overflow at rank 54, score 0.9141295.
+Fixed-cutoff evaluation: precision 40.75%, recall 7.5254%; AP 0.2077368.
+Exact quarterly top-50 precision is a different statistic: 42.25%.
+
+Open the PBIX in Power BI Desktop on Windows. Imported data is saved inside it;
+refresh is not required to view, filter or drill through the saved snapshot.
+The default quarter is 2026 Q2.
+
+Pages:
+1. Universe overview: quarter, asset tier, state and latest filing form filters.
+2. Watchlist: 50 priority slots, overflow flags and changes since the prior quarter.
+   Right-click a bank name > Drill through > 03 Bank detail.
+3. Bank detail: local SHAP contributions in log-odds, score/rank and a selectable
+   feature's available history against its same-quarter asset-tier median.
+   Some banks have fewer than 12 quarters; this is disclosed on the page.
+4. Model governance: evaluation metrics, model limits, 2023 failure cases and
+   a proposed override policy. Human review remains necessary.
+
+Portability: opening and interacting use embedded data. Refresh queries reference
+the local build's CSV helper files, so refreshing on another computer requires
+repointing those sources. Do not refresh merely to open the report.
+
+This PBIX is not the separate narrative report or 2-3 page governance memo.
+The validation log records Loki's selected human checks and explicitly identifies
+items not individually spot-checked. This is not full independent validation.
+
+Native v0.2 verification: COMPLETED in Power BI Desktop.
+- All 12 import tables refreshed without errors; all four pages visually inspected.
+- BofA NA is visible in the overflow list at rank 54. Right-click drill-through
+  opens its bank detail page with score 0.914, local SHAP and feature history.
+- Governance page reconciles to AP 0.208, fixed-cutoff precision 40.8%,
+  recall 7.5%, base rate 6.4% and cutoff 0.910.
+- Custom theme was imported natively and saved. A byte-identical copy was opened
+  in a separate Desktop window without refreshing: current totals and the
+  amber/red/grey status colors persisted.
+- Saved PBIX SHA256: 3324413188cd4665a1d4e75bcb43c9a877c7ed4ce026c913b57688630c0b4306.
+
+The older file without the _v02 suffix is preserved but is not the updated deliverable.
+These are AI-assisted consistency/UI checks, not independent human approval.

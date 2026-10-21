@@ -1,0 +1,149 @@
+{
+  "status": "Course-package documentation finalized; selected human checks completed with disclosed limits; Git publication authorized by Loki",
+  "source_commit": "05b38f795f3981ff798a9ab17d753aac39bd76c4",
+  "model_version": "ews-xgb-0.2",
+  "verification": "Automated recomputation from the ingested panel and exports; no independent model refit or raw ZIP ingestion",
+  "human_review": "Selected checks completed and memo conclusions accepted; scope limited",
+  "verified_results": {
+    "LABEL_RECONSTRUCTION": {
+      "full_panel_rows": 239553,
+      "calendar_reconstruction_mismatches": 0,
+      "zero_to_unlabeled_full_panel": 16450,
+      "changed_original_positives": 0,
+      "negative_with_incomplete_horizon": 0,
+      "resolved_labels": 200238
+    },
+    "EXPORT_LABELS": {
+      "rows": 189811,
+      "mismatches_to_source_calculation": 0,
+      "model_versions": [
+        "ews-xgb-0.2"
+      ]
+    },
+    "HISTORICAL_CASES": [
+      {
+        "rssd_id": 802866,
+        "target_v01": null,
+        "target_v02": null,
+        "outcome_v01": "Not yet resolved",
+        "outcome_v02": "Not yet resolved",
+        "flag_v02": 0,
+        "risk_rank_v02": 2208.0
+      },
+      {
+        "rssd_id": 2942690,
+        "target_v01": null,
+        "target_v02": null,
+        "outcome_v01": "Not yet resolved",
+        "outcome_v02": "Not yet resolved",
+        "flag_v02": 0,
+        "risk_rank_v02": 3783.0
+      },
+      {
+        "rssd_id": 4114567,
+        "target_v01": 0.0,
+        "target_v02": null,
+        "outcome_v01": "No breach",
+        "outcome_v02": "Not yet resolved",
+        "flag_v02": 0,
+        "risk_rank_v02": 2832.0
+      }
+    ],
+    "EVALUATION": {
+      "rows": 33911,
+      "positive": 2166,
+      "average_precision": 0.20773680724218363,
+      "fixed_cutoff_precision": 0.4075,
+      "fixed_cutoff_recall": 0.0752539242843952,
+      "top50_precision": 0.4225,
+      "top50_recall": 0.07802400738688828,
+      "cutoff": 0.9097484946250916
+    },
+    "LATEST": {
+      "banks": 4297,
+      "flags": 61,
+      "new_flags": 42,
+      "already_breach": 367,
+      "flagged_deposit_share": 0.10360766287059567,
+      "flagged_deposit_share_without_bofa": 0.0012161211294260917,
+      "bofa": [
+        {
+          "rssd_id": 480228,
+          "p_stress_4q": 0.9141294956207275,
+          "flag": 1,
+          "risk_rank": 54.0,
+          "total_deposits": 2121804000.0
+        }
+      ],
+      "bofa_features": [
+        {
+          "tier1_leverage": 7.1144,
+          "noncurrent_ratio": 0.006482121956011048,
+          "roa": 0.011261016068061831
+        }
+      ],
+      "bofa_top_shap": [
+        {
+          "metric_key": "tier1_leverage",
+          "shap_logodds": 2.8498756885528564,
+          "value": 7.1144
+        },
+        {
+          "metric_key": "unreal_loss_t1_chg4q",
+          "shap_logodds": 0.5776077508926392,
+          "value": -0.038914127602369286
+        },
+        {
+          "metric_key": "log_assets",
+          "shap_logodds": -0.52483731508255,
+          "value": 9.424006452027909
+        },
+        {
+          "metric_key": "unreal_loss_t1",
+          "shap_logodds": -0.28833213448524475,
+          "value": 0.4507840281050512
+        },
+        {
+          "metric_key": "noncurrent_ratio",
+          "shap_logodds": -0.2227884829044342,
+          "value": 0.006482121956011048
+        }
+      ]
+    },
+    "SHAP": {
+      "bank_quarters": 35573,
+      "score_max_error": 7.493165011807079e-07
+    }
+  },
+  "team_decisions_pending": [],
+  "team_decision": {
+    "recorded_date": "2026-10-20",
+    "basis": "Loki reported that he consulted his teammate and they agreed to retain the current settings",
+    "record": "Team_Decision_Record.txt",
+    "stress_triggers": {
+      "tier1_leverage_below_percent": 7.0,
+      "noncurrent_above_ratio": 0.03,
+      "annualized_income_assets_below_ratio": -0.005,
+      "combination": "any",
+      "horizon_calendar_quarters": 4
+    },
+    "model": "Current deduplicated 12 features; lower AP than naive disclosed",
+    "score_cutoff": 0.9097484946250916,
+    "review_budget_average_per_quarter": 50,
+    "overflow_visible": true,
+    "override_escalation": "Unique banks added or removed >20% of the original flagged list; any override if original list empty",
+    "scope": "Course-project settings and policy design only; not human verification or live-use approval"
+  },
+  "release_checks_pending": [
+    "Confirm actual course submission channel and upload requirements"
+  ],
+  "human_review_record": "Human_Review_Record.json",
+  "residual_review_limits": [
+    "Full raw-filing or ZIP audit",
+    "Independent human model refit",
+    "Human recomputation of all metrics and SHAP",
+    "Independent source check for every label",
+    "Abhi's separate final PDF read-through",
+    "Operational approval"
+  ]
+}

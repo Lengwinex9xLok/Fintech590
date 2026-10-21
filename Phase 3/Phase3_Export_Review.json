@@ -1,0 +1,127 @@
+{
+  "status": "Automated consistency checks passed; selected human checks completed as separately recorded; no full independent audit",
+  "source_commit": "05b38f795f3981ff798a9ab17d753aac39bd76c4",
+  "model_version": "ews-xgb-0.2",
+  "human_signoff": "See Human_Review_Record.json for the selected checks and limitations",
+  "checks": {
+    "LABEL_RECONSTRUCTION": {
+      "full_panel_rows": 239553,
+      "calendar_reconstruction_mismatches": 0,
+      "zero_to_unlabeled_full_panel": 16450,
+      "changed_original_positives": 0,
+      "negative_with_incomplete_horizon": 0,
+      "resolved_labels": 200238
+    },
+    "EXPORT_LABELS": {
+      "rows": 189811,
+      "mismatches_to_source_calculation": 0,
+      "model_versions": [
+        "ews-xgb-0.2"
+      ]
+    },
+    "HISTORICAL_CASES": [
+      {
+        "rssd_id": 802866,
+        "target_v01": null,
+        "target_v02": null,
+        "outcome_v01": "Not yet resolved",
+        "outcome_v02": "Not yet resolved",
+        "flag_v02": 0,
+        "risk_rank_v02": 2208.0
+      },
+      {
+        "rssd_id": 2942690,
+        "target_v01": null,
+        "target_v02": null,
+        "outcome_v01": "Not yet resolved",
+        "outcome_v02": "Not yet resolved",
+        "flag_v02": 0,
+        "risk_rank_v02": 3783.0
+      },
+      {
+        "rssd_id": 4114567,
+        "target_v01": 0.0,
+        "target_v02": null,
+        "outcome_v01": "No breach",
+        "outcome_v02": "Not yet resolved",
+        "flag_v02": 0,
+        "risk_rank_v02": 2832.0
+      }
+    ],
+    "EVALUATION": {
+      "rows": 33911,
+      "positive": 2166,
+      "average_precision": 0.20773680724218363,
+      "fixed_cutoff_precision": 0.4075,
+      "fixed_cutoff_recall": 0.0752539242843952,
+      "top50_precision": 0.4225,
+      "top50_recall": 0.07802400738688828,
+      "cutoff": 0.9097484946250916
+    },
+    "LATEST": {
+      "banks": 4297,
+      "flags": 61,
+      "new_flags": 42,
+      "already_breach": 367,
+      "flagged_deposit_share": 0.10360766287059567,
+      "flagged_deposit_share_without_bofa": 0.0012161211294260917,
+      "bofa": [
+        {
+          "rssd_id": 480228,
+          "p_stress_4q": 0.9141294956207275,
+          "flag": 1,
+          "risk_rank": 54.0,
+          "total_deposits": 2121804000.0
+        }
+      ],
+      "bofa_features": [
+        {
+          "tier1_leverage": 7.1144,
+          "noncurrent_ratio": 0.006482121956011048,
+          "roa": 0.011261016068061831
+        }
+      ],
+      "bofa_top_shap": [
+        {
+          "metric_key": "tier1_leverage",
+          "shap_logodds": 2.8498756885528564,
+          "value": 7.1144
+        },
+        {
+          "metric_key": "unreal_loss_t1_chg4q",
+          "shap_logodds": 0.5776077508926392,
+          "value": -0.038914127602369286
+        },
+        {
+          "metric_key": "log_assets",
+          "shap_logodds": -0.52483731508255,
+          "value": 9.424006452027909
+        },
+        {
+          "metric_key": "unreal_loss_t1",
+          "shap_logodds": -0.28833213448524475,
+          "value": 0.4507840281050512
+        },
+        {
+          "metric_key": "noncurrent_ratio",
+          "shap_logodds": -0.2227884829044342,
+          "value": 0.006482121956011048
+        }
+      ]
+    },
+    "SHAP": {
+      "bank_quarters": 35573,
+      "score_max_error": 7.493165011807079e-07
+    }
+  },
+  "input_sha256": {
+    "dim_bank.parquet": "74e87d35f233b90d0b1d3b8031b6819ee7c87a9edd8e0aeff4f932e762baf361",
+    "dim_metric.csv": "e4a81fbde2a801e56928276ad572d4e28adb07a5ae551bee4377e170a4cb0bde",
+    "dim_quarter.parquet": "cba68dcc192847f81b2cf31ec98000ec4e8120b77680b92dff6d30e6e8833635",
+    "fact_metric.parquet": "7455e5d0a814193136fb926b525cdd8d53d69c492b3a1402bf481e32feaa6705",
+    "fact_score.parquet": "f620f528d20b6160c8a57f4d983ac12a93edf963a1d8bf44d95539a3b9048f98",
+    "fact_shap.parquet": "501661542892c2a6316dd0e83f6b298d9ef0b94d7ad00f885fd5d99209ad5b40",
+    "threshold.json": "b5e471b022b7766717e46133ad6371a3051238e36341194666fdb393158a3d0c"
+  },
+  "limits": "No independent model refit or source ZIP ingestion; targets recomputed from committed ingested panel"
+}

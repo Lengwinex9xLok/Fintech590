@@ -1,0 +1,42 @@
+{
+  "reviewer": "Ziye Luo (Loki)",
+  "basis": "User confirmations in this chat during guided review; no invented signatures",
+  "status": "Selected checks completed and memo conclusions accepted; scope limited",
+  "completed": [
+    {
+      "check": "2026 Q2 overview",
+      "result": "Confirmed 4,297 banks, 61 flags, 42 new, 367 already in breach, 10.4% deposit share"
+    },
+    {
+      "check": "BofA UI and drill-through",
+      "result": "Confirmed RSSD 480228, rank 54, score about 0.914 and working bank detail"
+    },
+    {
+      "check": "BofA official source",
+      "result": "User read Tier 1 leverage 7.11% in official 2026 Q2 Call Report; consistent with 7.1144% rounded",
+      "evidence_limit": "User report; no archived official filing copy supplied here"
+    },
+    {
+      "check": "First Republic label example",
+      "result": "User accepted unresolved with only 2023 Q1 observed after 2022 Q4 and no observed ratio breach",
+      "evidence_limit": "Manual reasoning on an AI-generated panel extract"
+    },
+    {
+      "check": "Evaluation presentation",
+      "result": "User confirmed display/report rounding and fixed-cutoff versus quarterly top-50 distinction",
+      "evidence_limit": "Not an independent recalculation"
+    },
+    {
+      "check": "Governance memo",
+      "result": "User read memo and accepted restricted use, liquidity limitation and documented override rules"
+    }
+  ],
+  "not_claimed": [
+    "Full raw-filing or ZIP audit",
+    "Independent human model refit",
+    "Human recomputation of all metrics and SHAP",
+    "Independent source check for every label",
+    "Abhi's separate final PDF read-through",
+    "Operational approval"
+  ]
+}

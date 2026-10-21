@@ -1,0 +1,45 @@
+FINTECH 590 PHASE 3 SUBMISSION FILES
+
+Core deliverables in the repository
+1. Fintech590_Phase3_UniverseConsole_v02.pbix (repository root)
+   Four native Power BI pages; embedded data; no refresh required to view.
+2. Phase 3/Phase3_Report.pdf
+   Three-page report; the executive summary on page 1 carries the full story.
+3. Phase 3/Governance_Memo.pdf
+   Three-page memo; recommendation, seven failure modes, override rules and monitoring.
+4. Phase 3/LLM_Validation_Log.md
+   Entries P1-P16; AI use, corrections, automated checks and scoped human checks.
+
+Use these filenames. Do not submit the preserved _DRAFT files or the older PBIX
+without the _v02 suffix. The HTML report is an optional reading copy, not a
+substitute for the required PDF without instructor permission.
+
+Supporting evidence retained with the core files
+- Phase3_Export_Review.json: automated checks and pinned input hashes.
+- Human_Review_Record.json: user-confirmed spot checks and what they do not establish.
+- Team_Decision_Record.txt: decision to retain current settings.
+- Report_Update_Register.json: version, quantitative results and review status.
+- FirstRepublic_Label_Spotcheck.html: readable extract for the label example.
+- PBIX_Usage.txt: navigation, portability and native Desktop checks.
+- Package_Verification.json: final file hashes and structural checks.
+
+Review scope
+Loki confirmed selected dashboard/source/label/display checks and read and accepted
+the memo. The log explicitly marks items not individually checked by a human.
+Neither the course package nor these spot checks certify full independent validation
+or approval for operational use. No teammate signature is implied.
+
+Local ZIP and folder
+The separately prepared Fintech590_Phase3_Submission.zip is a delivery convenience,
+not a replacement for committing the required PBIX and log to the course repository.
+It contains selected deliverables and evidence, not the complete reproducibility repo.
+The pipeline and committed datasets remain in the repository at source commit
+05b38f795f3981ff798a9ab17d753aac39bd76c4.
+
+Git publication and remaining course steps
+Loki authorized committing and pushing the formal files to GitHub. The repository
+commit history and main branch record the release; local drafts and the superseded
+PBIX are excluded. This authorization does not include emailing or uploading to
+Canvas. Check the actual course submission page for whether it requires a repository
+link, separate attachments, or both, and confirm the deadline. Do not infer that
+uploading this ZIP alone meets the instructor's requirements.
