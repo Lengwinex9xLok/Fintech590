@@ -8,67 +8,113 @@
   "automated_checks": "passed",
   "human_review": "Selected checks completed with disclosed limits; not a full audit",
   "publication": "Git publication authorized by Loki; see release commit and remote branch; course upload separate",
+  "hash_basis": "bytes and sha256 describe committed Git blob content; working_tree fields describe local files before newline normalization. The local ZIP has its own manifest for its exact bytes.",
   "team_decision": "Retain current settings, per teammate agreement reported by Loki",
   "files": {
     "Fintech590_Phase3_UniverseConsole_v02.pbix": {
       "bytes": 57834870,
-      "sha256": "3324413188cd4665a1d4e75bcb43c9a877c7ed4ce026c913b57688630c0b4306"
+      "sha256": "3324413188cd4665a1d4e75bcb43c9a877c7ed4ce026c913b57688630c0b4306",
+      "git_blob": "d571c7a133dafaf8ed7f4d6da31d7881d169233e",
+      "working_tree_bytes": 57834870,
+      "working_tree_sha256": "3324413188cd4665a1d4e75bcb43c9a877c7ed4ce026c913b57688630c0b4306"
     },
-    "Phase 3\\Phase3_Report.pdf": {
+    "Phase 3/Phase3_Report.pdf": {
       "bytes": 118401,
-      "sha256": "18fe1d443f8f543f0c955adf34641c6a0ba2880bf58f3f168214bb57c2ab5b28"
+      "sha256": "18fe1d443f8f543f0c955adf34641c6a0ba2880bf58f3f168214bb57c2ab5b28",
+      "git_blob": "4747599e612e01f369ebe1eb11b3bd905a951eeb",
+      "working_tree_bytes": 118401,
+      "working_tree_sha256": "18fe1d443f8f543f0c955adf34641c6a0ba2880bf58f3f168214bb57c2ab5b28"
     },
-    "Phase 3\\Governance_Memo.pdf": {
+    "Phase 3/Governance_Memo.pdf": {
       "bytes": 109907,
-      "sha256": "c88aad7188cbd79de5962c98fde617f4d596aaecab994b901b260427b186882f"
+      "sha256": "c88aad7188cbd79de5962c98fde617f4d596aaecab994b901b260427b186882f",
+      "git_blob": "6b704a9a760b2ec1f579943412ac90ae4f659d47",
+      "working_tree_bytes": 109907,
+      "working_tree_sha256": "c88aad7188cbd79de5962c98fde617f4d596aaecab994b901b260427b186882f"
     },
-    "Phase 3\\Phase3_Report.docx": {
+    "Phase 3/Phase3_Report.docx": {
       "bytes": 40963,
-      "sha256": "f5d184d9ea46b9c7820765e7ecde62c0bb4e33e676f66d952177a6697f35415a"
+      "sha256": "f5d184d9ea46b9c7820765e7ecde62c0bb4e33e676f66d952177a6697f35415a",
+      "git_blob": "76dcd5a59bf08e99dd43f9e05b8e5b1e65d05a9f",
+      "working_tree_bytes": 40963,
+      "working_tree_sha256": "f5d184d9ea46b9c7820765e7ecde62c0bb4e33e676f66d952177a6697f35415a"
     },
-    "Phase 3\\Governance_Memo.docx": {
+    "Phase 3/Governance_Memo.docx": {
       "bytes": 40518,
-      "sha256": "573e0e378c0c5ed8bb6c01eaea69bfd4a9b4e1308433368a2a96c2c16ef3b4af"
+      "sha256": "573e0e378c0c5ed8bb6c01eaea69bfd4a9b4e1308433368a2a96c2c16ef3b4af",
+      "git_blob": "0ad26d517107b4e133f7a12784bed55ebf265211",
+      "working_tree_bytes": 40518,
+      "working_tree_sha256": "573e0e378c0c5ed8bb6c01eaea69bfd4a9b4e1308433368a2a96c2c16ef3b4af"
     },
-    "Phase 3\\Phase3_Report.html": {
-      "bytes": 10267,
-      "sha256": "ac3a4b38a8a2c724363d21ea67c22c605a7ed21f2c1f181f996465b540478f74"
+    "Phase 3/Phase3_Report.html": {
+      "bytes": 10189,
+      "sha256": "0d1e5115ed25d56254706f29fb764939129c8f19c53c9f02cfc3b75e250b5482",
+      "git_blob": "9211cf42cf1109484967dc064ae3905bafec0a7a",
+      "working_tree_bytes": 10267,
+      "working_tree_sha256": "ac3a4b38a8a2c724363d21ea67c22c605a7ed21f2c1f181f996465b540478f74"
     },
-    "Phase 3\\LLM_Validation_Log.md": {
-      "bytes": 16678,
-      "sha256": "c95f8cf2017770ed2df31599337c8305224ada23794fcb745b193b5743ae06f8"
+    "Phase 3/LLM_Validation_Log.md": {
+      "bytes": 16631,
+      "sha256": "51117633c27a14475d103a8384cbe0e89cff180f268bd98e84b89ac11d8c39d1",
+      "git_blob": "9eea132a771b3783cd38d8ee9524b83bfb4bb388",
+      "working_tree_bytes": 16678,
+      "working_tree_sha256": "c95f8cf2017770ed2df31599337c8305224ada23794fcb745b193b5743ae06f8"
     },
-    "Phase 3\\Team_Decision_Record.txt": {
+    "Phase 3/Team_Decision_Record.txt": {
       "bytes": 3407,
-      "sha256": "e120fb0690a79ae39d64b942e74aa449b746bd16b1c918c13966a3031bfca659"
+      "sha256": "e120fb0690a79ae39d64b942e74aa449b746bd16b1c918c13966a3031bfca659",
+      "git_blob": "b54d7b811778a2d2c1c1020994f780c04f49b1af",
+      "working_tree_bytes": 3407,
+      "working_tree_sha256": "e120fb0690a79ae39d64b942e74aa449b746bd16b1c918c13966a3031bfca659"
     },
-    "Phase 3\\Report_Update_Register.json": {
-      "bytes": 4978,
-      "sha256": "6d614bf077fa68ffc17e3b68b7dbb83178e3ebc87a33bf83873786a05597ebfa"
+    "Phase 3/Report_Update_Register.json": {
+      "bytes": 4829,
+      "sha256": "86bc3130485a42e4d7a9ffd36903d2e1ca6c12fc98fe1f0c80bac397ccd8a7d4",
+      "git_blob": "cf3abd81ad352e2bcbfd11933e83bba8e83d9b11",
+      "working_tree_bytes": 4978,
+      "working_tree_sha256": "6d614bf077fa68ffc17e3b68b7dbb83178e3ebc87a33bf83873786a05597ebfa"
     },
-    "Phase 3\\Document_Release_Checklist.txt": {
-      "bytes": 2376,
-      "sha256": "8fc94c9f8c8bd584eb7ad67609f29413d703c09b9ce2f159747f2d1b15afa207"
+    "Phase 3/Document_Release_Checklist.txt": {
+      "bytes": 2342,
+      "sha256": "e0a327395309ac4a575f8351d798e08c196922bf6939187c53b811c7bb714af4",
+      "git_blob": "b150f6823f2373d5466e7ecaf76d906df6fb6252",
+      "working_tree_bytes": 2376,
+      "working_tree_sha256": "8fc94c9f8c8bd584eb7ad67609f29413d703c09b9ce2f159747f2d1b15afa207"
     },
-    "Phase 3\\Human_Review_Record.json": {
-      "bytes": 1731,
-      "sha256": "3cedb80878444240a25f5f6d2261d03b9af91dd47dbf4c46255eeceaf1813002"
+    "Phase 3/Human_Review_Record.json": {
+      "bytes": 1690,
+      "sha256": "6f7b4c97f4d8a25dc4b800c8f60264c990044fcfcc387d2bf05319a07daf3f98",
+      "git_blob": "43cbc578bcc52722d8bc5229621b27bcaaff5226",
+      "working_tree_bytes": 1731,
+      "working_tree_sha256": "3cedb80878444240a25f5f6d2261d03b9af91dd47dbf4c46255eeceaf1813002"
     },
-    "Phase 3\\Phase3_Export_Review.json": {
-      "bytes": 4244,
-      "sha256": "7f225a35c19858fb425c7a537540cfb173a8b55b9e54e11233fa713d94defb05"
+    "Phase 3/Phase3_Export_Review.json": {
+      "bytes": 4118,
+      "sha256": "2fa8d5830ae4caba68de9e5dc14496c578347a66d89d8c5157c9e2eebddb990c",
+      "git_blob": "ba700a4b296398b018da17c4d03f803e263a55bb",
+      "working_tree_bytes": 4244,
+      "working_tree_sha256": "7f225a35c19858fb425c7a537540cfb173a8b55b9e54e11233fa713d94defb05"
     },
-    "Phase 3\\Submission_Guide.txt": {
+    "Phase 3/Submission_Guide.txt": {
       "bytes": 2587,
-      "sha256": "938fe058459e1ec821dd33d7aab2f5150b5de21612d37d9d10c9ea0579fbde26"
+      "sha256": "938fe058459e1ec821dd33d7aab2f5150b5de21612d37d9d10c9ea0579fbde26",
+      "git_blob": "9f4017293e2a98eded36e9d009f5fae802e04664",
+      "working_tree_bytes": 2587,
+      "working_tree_sha256": "938fe058459e1ec821dd33d7aab2f5150b5de21612d37d9d10c9ea0579fbde26"
     },
-    "Phase 3\\PBIX_Usage.txt": {
+    "Phase 3/PBIX_Usage.txt": {
       "bytes": 2744,
-      "sha256": "127cf533a7f710613ddbb56c6ec81c776364f0f67a0026fffb50e69995f1398a"
+      "sha256": "127cf533a7f710613ddbb56c6ec81c776364f0f67a0026fffb50e69995f1398a",
+      "git_blob": "a83e0d1a37712c17d7a5f791d7196b533d7f82cf",
+      "working_tree_bytes": 2744,
+      "working_tree_sha256": "127cf533a7f710613ddbb56c6ec81c776364f0f67a0026fffb50e69995f1398a"
     },
-    "Phase 3\\FirstRepublic_Label_Spotcheck.html": {
-      "bytes": 3822,
-      "sha256": "4dfa869d0a4b5a76c3884ffac0a860cf8650eea6c53eb4099d615504d01054e2"
+    "Phase 3/FirstRepublic_Label_Spotcheck.html": {
+      "bytes": 3799,
+      "sha256": "398adbfa0a2b10437c94d796fd6aa25c304e7aacf0be0de8db8bfefdf7dd023f",
+      "git_blob": "7057de7924f7a2c4ad7e41805a5014d3e1539ebf",
+      "working_tree_bytes": 3822,
+      "working_tree_sha256": "4dfa869d0a4b5a76c3884ffac0a860cf8650eea6c53eb4099d615504d01054e2"
     }
   }
 }
